@@ -1,0 +1,346 @@
+/* padding */
+.p0 {
+	padding: 0 !important;
+}
+
+.pt0 {
+	padding-top: 0 !important;
+}
+
+.pb0 {
+	padding-bottom: 0 !important;
+}
+
+.pr0 {
+	padding-right: 0rpx !important;
+}
+
+.pl6 {
+	padding-left: 6rpx !important;
+}
+
+.pr6 {
+	padding-right: 6rpx !important;
+}
+
+.p8 {
+	padding: 8rpx !important;
+}
+
+.pt8 {
+	padding-top: 8rpx !important;
+}
+
+.pb8 {
+	padding-bottom: 8rpx !important;
+}
+
+.pl8 {
+	padding-left: 8rpx !important;
+}
+
+.pr8 {
+	padding-right: 8rpx !important;
+}
+.p10 {
+	padding: 10rpx !important;
+}
+
+.pt10 {
+	padding-top: 10rpx !important;
+}
+
+.pb10 {
+	padding-bottom: 10rpx !important;
+}
+
+.pl10 {
+	padding-left: 10rpx !important;
+}
+
+.pr10 {
+	padding-right: 10rpx !important;
+}
+
+.p12 {
+	padding: 12rpx !important;
+}
+
+.pt12 {
+	padding-top: 12rpx !important;
+}
+
+.pb12 {
+	padding-bottom: 12rpx !important;
+}
+
+.pl12 {
+	padding-left: 12rpx !important;
+}
+
+.pr12 {
+	padding-right: 12rpx !important;
+}
+
+.p14 {
+	padding: 14rpx !important;
+}
+
+.pt14 {
+	padding-top: 14rpx !important;
+}
+
+.pb14 {
+	padding-bottom: 14rpx !important;
+}
+
+.pl14 {
+	padding-left: 14rpx !important;
+}
+.p16 {
+	padding: 16rpx !important;
+}
+
+.pt16 {
+	padding-top: 16rpx !important;
+}
+
+.pb16 {
+	padding-bottom: 16rpx !important;
+}
+
+.pl16 {
+	padding-left: 16rpx !important;
+}
+
+.pr16 {
+	padding-right: 16rpx !important;
+}
+
+.p18 {
+  padding: 18rpx;
+}
+
+.p20 {
+	padding: 20rpx !important;
+}
+
+.pt20 {
+	padding-top: 20rpx !important;
+}
+
+.pb20 {
+	padding-bottom: 20rpx !important;
+}
+
+.pl20 {
+	padding-left: 20rpx !important;
+}
+
+.pr20 {
+	padding-right: 20rpx !important;
+}
+
+.p24 {
+	padding: 24rpx !important;
+}
+
+.pt24 {
+	padding-top: 24rpx !important;
+}
+
+.pb24 {
+	padding-bottom: 24rpx !important;
+}
+
+.pl24 {
+	padding-left: 24rpx !important;
+}
+
+.pr24 {
+	padding-right: 24rpx !important;
+}
+.p26 {
+	padding: 26rpx !important;
+}
+
+.pt26 {
+	padding-top: 26rpx !important;
+}
+
+.pb26 {
+	padding-bottom: 26rpx !important;
+}
+
+.pl26 {
+	padding-left: 26rpx !important;
+}
+
+.pr26 {
+	padding-right: 26rpx !important;
+}
+.p28 {
+	padding: 28rpx !important;
+}
+.pt28 {
+	padding-top: 28rpx !important;
+}
+
+.pb28 {
+	padding-bottom: 28rpx !important;
+}
+
+.pl28 {
+	padding-left: 28rpx !important;
+}
+
+.pr28 {
+	padding-right: 28rpx !important;
+}
+
+.pl30 {
+	padding-left: 30rpx !important;
+}
+
+.pr30 {
+	padding-right: 30rpx !important;
+}
+.pt30 {
+	padding-top: 30rpx !important;
+}
+
+.pb30 {
+	padding-bottom: 30rpx !important;
+}
+
+.p32 {
+	padding: 32rpx !important;
+}
+
+.pt32 {
+	padding-top: 32rpx !important;
+}
+
+.pb32 {
+	padding-bottom: 32rpx !important;
+}
+
+.pl32 {
+	padding-left: 32rpx !important;
+}
+
+.pr32 {
+	padding-right: 32rpx !important;
+}
+
+.p34 {
+	padding: 34rpx !important;
+}
+
+.pt34 {
+	padding-top: 34rpx !important;
+}
+
+.pb34 {
+	padding-bottom: 34rpx !important;
+}
+
+.pl34 {
+	padding-left: 34rpx !important;
+}
+
+.pr34 {
+	padding-right: 34rpx !important;
+}
+
+.p36 {
+	padding: 36rpx !important;
+}
+
+.pt36 {
+	padding-top: 36rpx !important;
+}
+
+.pb36 {
+	padding-bottom: 36rpx !important;
+}
+
+.pl36 {
+	padding-left: 36rpx !important;
+}
+
+.pr36 {
+	padding-right: 36rpx !important;
+}
+
+.pl38 {
+	padding-left: 38rpx !important;
+}
+
+.p40 {
+	padding: 40rpx !important;
+}
+
+.pt40 {
+	padding-top: 40rpx !important;
+}
+
+.pb40 {
+	padding-bottom: 40rpx !important;
+}
+
+.pl40 {
+	padding-left: 40rpx !important;
+}
+
+.pr40 {
+	padding-right: 40rpx !important;
+}
+
+.p48 {
+	padding: 48rpx !important;
+}
+
+.pt48 {
+	padding-top: 48rpx !important;
+}
+
+.pb48 {
+	padding-bottom: 48rpx !important;
+}
+
+.pl48 {
+	padding-left: 48rpx !important;
+}
+
+.pr48 {
+	padding-right: 48rpx !important;
+}
+
+.pr60 {
+	padding-right: 60rpx !important;
+}
+
+.p66 {
+	padding: 66rpx !important;
+}
+
+.pt66 {
+	padding-top: 66rpx !important;
+}
+
+.pb66 {
+	padding-bottom: 66rpx !important;
+}
+
+.pl66 {
+	padding-left: 66rpx !important;
+}
+
+.pr66 {
+	padding-right: 66rpx !important;
+}
+
+.pr160 {
+	padding-right: 160rpx !important;
+}

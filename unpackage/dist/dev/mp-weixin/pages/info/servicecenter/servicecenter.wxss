@@ -1,0 +1,73 @@
+
+.container {
+  padding-bottom: 200rpx;
+}
+.service-list{
+  margin-top: 20rpx;
+}
+.list-item{
+  width: 100%;
+  background:rgba(255,255,255,1);
+  padding-left: 24rpx;
+  border-bottom: 2rpx solid rgba(242,242,242,1);
+  position: relative;
+}
+.list-item text{
+  height: 100rpx;
+  font-size: 14px;
+  line-height: 100rpx;
+}
+.list-item image{
+  position: absolute;
+  width: 10rpx;
+  height: 16rpx;
+  right: 58rpx;
+  top: 42rpx;
+}
+.kefu{
+  width: 100%;
+  height: 160rpx;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  background: rgba(255,255,255,1);
+  z-index: 999;
+}
+.kefu > view{
+  width: 50%;
+  float: left;
+  height: 100%;
+}
+.kefu .phone-kefu image,.kefu .online-kefu image{
+  width: 38rpx;
+  height: 38rpx;
+  display: block;
+  margin: 22rpx auto 18rpx;
+}
+.kefu .phone-kefu text,.kefu .online-kefu text{
+  margin-bottom: 6rpx;
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  color: #333;
+}
+.kefu .phone-kefu text.time,.kefu .online-kefu text.time{
+  color: #999;
+  font-size: 10px;
+}
+button {
+  position: unset;
+  line-height: unset;
+  background: unset;
+  border: unset;
+  outline: none;
+  -webkit-tap-highlight-color:unset;
+}
+button::after {
+  border: none;
+  position: unset;
+}
+button:hover,button:focus,button:active {
+  background: unset;
+}
+

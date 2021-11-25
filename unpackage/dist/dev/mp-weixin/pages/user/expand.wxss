@@ -1,0 +1,72 @@
+
+page {
+	background-color: #fff;
+}
+.toker-achievements {
+	height: 172rpx;
+	background-color: #f6f6f6;
+}
+.toker-line {
+	width: 2rpx;
+	height: 48rpx;
+	background-color: #c4c4cc;
+}
+.operation-btn {
+	width: 172rpx;
+	height: 56rpx;
+}
+.manage-box {
+	padding: 16rpx 32rpx;
+}
+._table {
+	width: 100%;
+}
+._table ._tr ._th {
+	height: 66rpx;
+	color: #939399;
+}
+._table ._tr ._th,
+._table ._tr ._td {
+	padding: 0 8rpx;
+	font-size: 24rpx;
+	height: 68rpx;
+	font-weight: 400;
+	text-align: left;
+}
+._table ._tr ._th:first-child,
+._table ._tr ._td:first-child {
+	width: 140rpx;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #303133;
+	padding: 0;
+}
+._table ._tr ._th:nth-child(2),
+._table ._tr ._td:nth-child(2) {
+	width: 96rpx;
+}
+._table ._tr ._th:nth-child(3),
+._table ._tr ._td:nth-child(3) {
+	width: 150rpx;
+}
+._table ._tr ._td:nth-child(4) {
+	color: #FF411C;
+}
+._table ._tr ._th:last-child,
+._table ._tr ._td:last-child {
+	width: 72rpx;
+	text-align: right;
+}
+.h88 {
+	height: 88rpx;
+}
+.bt2 {
+	border-top: 2rpx solid #f7f7fa;
+}
+.bb2 {
+	border-bottom: 2rpx solid #f7f7fa;
+}
+.mr-24 {
+	margin-right: -28rpx;
+}
+

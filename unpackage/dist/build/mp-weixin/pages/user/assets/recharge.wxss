@@ -1,0 +1,1 @@
+page{background-color:#fff}.container{padding:32rpx 60rpx}.pay-way{background-color:#fafafa;-webkit-border-radius:20rpx;border-radius:20rpx;padding:0 32rpx}.pay-way > view{padding:32rpx 0 28rpx}.border-btn{-webkit-border-radius:45rpx;border-radius:45rpx}

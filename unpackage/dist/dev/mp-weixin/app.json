@@ -1,0 +1,122 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/index/index",
+    "pages/index/index",
+    "pages/login/agreement/agreement",
+    "pages/login/question/question",
+    "pages/login/login",
+    "pages/login/phonelogin",
+    "pages/login/phonelogin",
+    "pages/login/forgetPwd",
+    "pages/login/register",
+    "pages/info/servicecenter/servicecenter",
+    "pages/info/servicecenter/servicedetail",
+    "pages/info/servicecenter/feedback",
+    "pages/info/servicecenter/help/list",
+    "pages/goods/list",
+    "pages/goods/goodsdetail",
+    "pages/auction/index",
+    "pages/auction/specialshow",
+    "pages/auction/goodsdetail",
+    "pages/auction/rules",
+    "pages/user/index",
+    "pages/order/order",
+    "pages/order/addorder",
+    "pages/order/pay",
+    "pages/order/auctionpay",
+    "pages/order/waitpay",
+    "pages/order/orderpay",
+    "pages/order/leave",
+    "pages/order/logistics",
+    "pages/order/logisticspay",
+    "pages/order/addauction",
+    "pages/user/expand",
+    "pages/user/address",
+    "pages/user/address/add",
+    "pages/user/auctiongoods",
+    "pages/user/auctiongoods2",
+    "pages/user/auctiongoods/detail",
+    "pages/user/about",
+    "pages/user/set",
+    "pages/user/assets",
+    "pages/user/assets",
+    "pages/user/assets/withdrawal",
+    "pages/user/assets/history",
+    "pages/user/assets/balance",
+    "pages/user/assets/balance_break",
+    "pages/user/assets/recharge",
+    "pages/login/realname",
+    "pages/login/bankcard",
+    "pages/login/phonebindwx",
+    "pages/component/tabbar",
+    "pages/order/detail",
+    "pages/user/assets/cold",
+    "pages/user/message",
+    "pages/user/collection",
+    "pages/user/vipcoupon",
+    "pages/user/expenddetail",
+    "pages/user/bonus",
+    "pages/component/listempty",
+    "pages/component/nomore",
+    "pages/component/changeaddress",
+    "pages/component/remark"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarTitleText": "好获拍拍",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#939399",
+    "selectedColor": "#FF411C",
+    "borderStyle": "black",
+    "fontSize": "12px",
+    "iconWidth": "30px",
+    "height": "60px",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "iconPath": "static/tabbar/index.png",
+        "selectedIconPath": "static/tabbar/index-cur.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/goods/list",
+        "iconPath": "static/tabbar/goods.png",
+        "selectedIconPath": "static/tabbar/goods-cur.png",
+        "text": "商品"
+      },
+      {
+        "pagePath": "pages/auction/index",
+        "iconPath": "static/tabbar/auction.png",
+        "selectedIconPath": "static/tabbar/auction-cur.png",
+        "text": "拍卖"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "static/tabbar/order.png",
+        "selectedIconPath": "static/tabbar/order-cur.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "static/tabbar/user.png",
+        "selectedIconPath": "static/tabbar/user-cur.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "index": "/pages/index/main",
+    "goods": "/pages/goods/list",
+    "auction": "/pages/auction/index",
+    "order": "/pages/order/order",
+    "user": "/pages/user/index",
+    "cu-custom": "/colorui/components/cu-custom",
+    "tabbar": "/pages/component/tabbar"
+  }
+}

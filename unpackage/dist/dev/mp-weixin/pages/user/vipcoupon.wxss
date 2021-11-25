@@ -1,0 +1,99 @@
+
+.kzt-box {
+	padding: 15vh 0;
+}
+.kzt {
+	width: 240rpx;
+	height: 240rpx;
+	display: block;
+	margin: auto;
+}
+.loading {
+	width: 480rpx;
+	height: 480rpx;
+	display: block;
+	margin: auto;
+}
+
+
+.no-more {
+	padding: 24rpx 0;
+	text-align: center;
+}
+
+
+.container {
+	padding: 24rpx 32rpx;
+	position: relative;
+}
+.vip-coupon {
+	width: 100%;
+	height: 200rpx;
+	position: relative;
+}
+.coupon-number {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 40rpx;
+	margin: 0 auto;
+}
+.transfer-btn {
+	width: 190rpx;
+	height: 64rpx;
+	position: absolute;
+	right: 38rpx;
+	bottom: 44rpx;
+	z-index: 2;
+}
+.screen-record {
+	width: calc(100% + 64rpx);
+	height: 78rpx;
+	margin-left: -32rpx;
+	margin-top: -24rpx;
+	border-bottom: 2rpx solid #f7f7fa;
+	margin-bottom: 24rpx;
+}
+.screen-record > view {
+	color: #939399;
+	padding: 0 32rpx;
+	height: 100%;
+	position: relative;
+}
+.screen-record > view.cur {
+	color: #FF411C;
+}
+.cur-icon {
+	width: 80rpx;
+	height: 4rpx;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display: none;
+	background-color: #FF411C;
+}
+.screen-record > view.cur .cur-icon {
+	display: block;
+}
+.fixed.screen-record {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 32rpx;
+	width: 100%;
+	background-color: #fff;
+	margin: 0;
+	bottom: 0;
+	z-index: 3;
+}
+.record-list {
+	padding: 24rpx 32rpx 32rpx;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
+	background-color: #fff;
+	overflow: hidden;
+	margin-bottom: 20rpx;
+}
+

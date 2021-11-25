@@ -1,0 +1,45 @@
+
+page {
+	background-color: #fff;
+}
+.container {
+	padding: 32rpx 60rpx;
+}
+.drop-down {
+	width: 100%;
+	height: 90rpx;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
+	border: 2rpx solid #DDDDE6;
+	padding: 0 32rpx;
+}
+.location-icon {
+	width: 40rpx;
+	height: 40rpx;
+}
+.textarea {
+	height: auto;
+}
+.textarea textarea {
+	background: #FFFFFF;
+	border: 2rpx solid #DDDDE6;
+	opacity: 1;
+	-webkit-border-radius: 16rpx;
+	        border-radius: 16rpx;
+	padding: 24rpx 32rpx;
+	font-size: 30rpx;
+	line-height: 42rpx;
+	color: #606266;
+	width: 100%;
+}
+.textarea textarea::-webkit-input-placeholder {
+	color: #c4c4cc;
+}
+.textarea textarea::placeholder {
+	color: #c4c4cc;
+}
+.border-btn {
+	-webkit-border-radius: 45rpx;
+	        border-radius: 45rpx;
+}
+

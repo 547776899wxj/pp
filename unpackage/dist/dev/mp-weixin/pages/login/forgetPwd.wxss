@@ -1,0 +1,26 @@
+
+page {
+	background-color: #fff;
+}
+.container {
+	padding: 32rpx 60rpx;
+}
+.mt-12 {
+	margin-top: -12px;
+}
+.mb84 {
+	margin-bottom: 84rpx;
+}
+.border-btn {
+	-webkit-border-radius: 45rpx;
+	        border-radius: 45rpx;
+}
+.bg-pp {
+	background: -webkit-linear-gradient(323deg, #E93A37 0%, #FF6346 100%);
+	background: linear-gradient(127deg, #E93A37 0%, #FF6346 100%);
+}
+.cu-btn.lg {
+	font-size: 28rpx;
+	height: 90rpx;
+}
+

@@ -1,0 +1,48 @@
+
+.kzt-box {
+	padding: 15vh 0;
+}
+.kzt {
+	width: 240rpx;
+	height: 240rpx;
+	display: block;
+	margin: auto;
+}
+.loading {
+	width: 480rpx;
+	height: 480rpx;
+	display: block;
+	margin: auto;
+}
+
+
+.no-more {
+	padding: 24rpx 0;
+	text-align: center;
+}
+
+
+.cancel-color{
+		color: #888
+}
+.screen-time {
+	height: 76rpx;
+	background-color: #fff;
+	padding: 0 20rpx;
+}
+.container {
+	padding: 22rpx 20rpx 0;
+}
+.balance-list {
+	padding: 22rpx 20rpx 20rpx;
+	background-color: #fff;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
+}
+.balance-list+.balance-list {
+	margin-top: 20rpx;
+}
+.mw470 {
+	max-width: 470rpx;
+}
+

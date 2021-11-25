@@ -1,0 +1,52 @@
+/* 向上的箭头 */
+
+.arrow-top {
+font-size: 0;
+line-height: 0;
+border-width: 5px;
+border-color: #999999;
+border-top-width: 0;
+border-style: dashed;
+border-bottom-style: solid;
+border-left-color: transparent;
+border-right-color: transparent;
+}
+/* 向右的箭头 */
+
+.arrow-right {
+font-size: 0;
+line-height: 0;
+border-width: 5px;
+border-color: #999999;
+border-right-width: 0;
+border-style: dashed;
+border-left-style: solid;
+border-top-color: transparent;
+border-bottom-color: transparent;
+}
+/* 向下的箭头 */
+
+.arrow-bottom {
+font-size: 0;
+line-height: 0;
+border-width: 5px;
+border-color: #999999;
+border-bottom-width: 0;
+border-style: dashed;
+border-top-style: solid;
+border-left-color: transparent;
+border-right-color: transparent;
+}
+/* 向左的箭头 */
+
+.arrow-left {
+font-size: 0;
+line-height: 0;
+border-width: 5px;
+border-color: #999999;
+border-left-width: 0;
+border-style: dashed;
+border-right-style: solid;
+border-top-color: transparent;
+border-bottom-color: transparent;
+}

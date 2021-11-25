@@ -1,0 +1,105 @@
+
+page {
+	background-color: #f6f6f6;
+}
+.address-box {
+	background-color: #fff;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
+	overflow: hidden;
+}
+.container {
+	padding: 8rpx 20rpx;
+}
+.goods-info {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	        align-items: flex-start;
+	padding: 20rpx;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
+	background-color: #fff;
+}
+.goods-image {
+	width: 180rpx;
+	height: 180rpx;
+	-webkit-border-radius: 12rpx;
+	        border-radius: 12rpx;
+	-webkit-flex-shrink: 0;
+	        flex-shrink: 0;
+	margin-right: 20rpx;
+}
+.goods-msg {
+	height: 180rpx;
+}
+.goods-name {
+	font-size: 26rpx;
+	color: #303133;
+	text-align: left;
+	line-height: 40rpx;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.remark-list {
+	width: 100%;
+	height: 90rpx;
+	background-color: #fff;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
+	padding: 0 20rpx;
+	margin-top: 20rpx;
+}
+.auction-price-box {
+	padding: 20rpx;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
+	background-color: #fff;
+}
+.price-input {
+	width: 100%;
+	height: 90rpx;
+	border: 2rpx solid #dddde6;
+	-webkit-border-radius: 16rpx;
+	        border-radius: 16rpx;
+	padding: 0 32rpx;
+}
+.price-input input {
+	height: 100%;
+	font-size: 36rpx;
+	line-height: 44rpx;
+	font-weight: bold;
+	color: #303133;
+	margin-left: 32rpx;
+}
+.cu-bar.tabbar.submit-box {
+	padding: 0 32rpx;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	min-height: 100rpx;
+	padding-bottom: env(safe-area-inset-bottom);
+}
+.submit-box .cu-btn {
+	width: 240rpx;
+	height: 76rpx;
+	margin: 0;
+}
+.submit-box {
+	padding: 0 32rpx;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	min-height: 100rpx;
+	padding-bottom: env(safe-area-inset-bottom);
+}
+.submit-box .cu-btn {
+	width: 240rpx;
+	height: 76rpx;
+	margin: 0;
+}
+

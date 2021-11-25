@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tabbar": "/pages/component/tabbar",
+    "listempty": "/pages/component/listempty",
+    "nomore": "/pages/component/nomore"
+  }
+}

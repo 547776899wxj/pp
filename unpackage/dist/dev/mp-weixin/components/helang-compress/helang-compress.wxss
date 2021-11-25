@@ -1,0 +1,9 @@
+.compress.data-v-5ece160e {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+  top: -99999px;
+  left: 0;
+}
+

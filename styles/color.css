@@ -1,0 +1,250 @@
+/* color css */
+page {
+	--primaryColor: #3295F9;
+	--halfPrimary: #FEECEF;
+	--yellow: #F7B500;
+}
+
+.fc-f {
+	color: #fff !important;
+}
+
+.fc-b {
+	color: #BBBBBB!important;
+}
+
+.fc-d {
+	color: #DDDDDD!important;
+}
+
+.fc-0 {
+    color: #000 !important;
+}
+
+.fc-2 {
+	color: #222 !important;
+}
+
+.fc-3 {
+	color: #333 !important;
+}
+
+.fc-5 {
+	color: #555 !important;
+}
+
+.fc-6 {
+	color: #666 !important;
+}
+
+.fc-9 {
+	color: #999 !important;
+}
+
+.fc-256 {
+	color: #2564D1 !important;
+}
+.fc-246 {
+	color: #2464d0 !important;
+}
+.fc-c72 {
+	color: #c7222b !important;
+}
+.fc-f36 {
+  color: #F36310;
+}
+.fc-343 {
+  color: #343434;
+}
+.fc-f3d {
+	color: #F3D08F;
+}
+.fc-819 {
+	color: #81929a;
+}
+.fc-9d {
+	color: #9d9d9d;
+}
+.fc-5d {
+	color: #5d5d5d;
+}
+.fc-62 {
+	color: #626262;
+}
+
+.fc-primary {
+	color: var(--primaryColor) !important;
+}
+
+.fc-yellow {
+	color: var(--yellow) !important;
+}
+
+.bc-f {
+	background: #fff !important;
+}
+.bc-2 {
+	background: #222222 !important;
+}
+
+.bc-d {
+	background: #DDD !important;
+}
+
+.bc-fa {
+	background: #fafafa !important;
+}
+
+.bc-f2 {
+	background: #f2f2f2 !important;
+}
+.bc-f5 {
+	background: #f5f5f5 !important;
+}
+.bc-f8 {
+	background: #f8f8f8 !important;
+}
+
+.bc-f24 {
+	background: #f2f2f4 !important;
+}
+
+.bc-c {
+	background: #ccc !important;
+}
+
+.bc-primary {
+	background: var(--primaryColor) !important;
+}
+
+.bc-half {
+	background: var(--halfPrimary) !important;
+}
+
+.bc-yellow {
+	background: var(--yellow) !important;
+}
+
+.bc-red {
+  background: #EE5B3B!important;
+}
+
+.bc-b {
+	background: #BBBBBB!important;
+}
+
+.bc-c72 {
+	background: #c7222b !important;
+}
+.bc-ee5 {
+	background: #ee5b3b !important;
+}
+
+.fc-red {
+	color: #EE5B3B!important;
+}
+
+.fc-green {
+	color: #19C268!important;
+}
+.fc-ddd {
+	color: #ddd;
+}
+
+.fc-cda {
+	color: #CDA860;
+}
+
+.fc-c8c {
+	color: #C8C1A5;
+}
+.fc-c350 {
+	color: #c35019;
+}
+.fc-ee5 {
+	color: #ee5b3b!important;
+}
+
+.fc-c4a {
+	color: #C4A77B;
+}
+
+.fc-604 {
+	color: #604C38;
+}
+
+.fc-6e4 {
+	color: #6E4C0F;
+}
+
+.fc-e8d {
+	color: #E8D0A0;
+}
+
+.fc-f36 {
+	color: #F36310;
+}
+
+.fc-555 {
+	color: #555555;
+}
+.fc-222 {
+	color: #222222;
+}
+.fc-999 {
+	color: #999999;
+}
+.fc-c4cc {
+	color: #c4c4cc;
+}
+.fc-2e8 {
+	color: #2E82F1;
+}
+.fc-ff4 {
+	color: #FF411C;
+}
+.fc-303 {
+	color: #303133;
+}
+.fc-606 {
+	color: #606266;
+}
+.fc-909 {
+	color: #909399;
+}
+.fc-939 {
+	color: #939399;
+}
+.fc-e31 {
+	color: #e31d1a;
+}
+.fc-2e8 {
+	color: #2e82f1;
+}
+.fc-146 {
+	color: #146ee6;
+}
+.fc-25b {
+	color: #25B69E;
+}
+.fc-ffd {
+	color: #FFDD32;
+}
+.fc-fc4 {
+	color: #fc4231;
+}
+.fc-d52 {
+	color: #D52F2C;
+}
+.fc-fb2 {
+	color: #FB203A;
+}
+
+.un{
+	background: #dddddd !important;
+	color: #999999 !important;
+}
+
+.bg-f6 {
+	background: #f6f6f6;
+}

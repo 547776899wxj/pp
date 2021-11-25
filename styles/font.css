@@ -1,0 +1,135 @@
+/* 字体-通用样式 */
+.fm-scr {
+	font-family: PingFangSC-Regular, PingFang SC !important;
+}
+
+.fm-scm {
+	font-family: PingFangSC-Medium, PingFang SC !important;
+}
+
+.fm-scb {
+	font-family: PingFang-SC-Bold, PingFang-SC !important;
+}
+
+.fm-db {
+	font-family: DINPro, 'din-b' !important;
+}
+.fm-dm {
+	font-family: DINPro, 'din-m' !important;
+}
+
+.fm-scs {
+	font-family: PingFangSC-Semibold, PingFang SC !important;
+}
+
+.fs-20 {
+	font-size: 20rpx !important;
+}
+
+.fs-22 {
+	font-size: 22rpx !important;
+}
+
+.fs-24 {
+	font-size: 24rpx !important;
+}
+
+.fs-26 {
+	font-size: 26rpx !important;
+}
+
+.fs-28 {
+	font-size: 28rpx !important;
+}
+
+.fs-30 {
+	font-size: 30rpx !important;
+}
+
+.fs-32 {
+	font-size: 32rpx !important;
+}
+
+.fs-34 {
+	font-size: 34rpx !important;
+}
+
+.fs-36 {
+	font-size: 36rpx !important;
+}
+
+.fs-38 {
+	font-size: 38rpx !important;
+}
+
+
+.fs-40 {
+	font-size: 40rpx !important;
+}
+
+.fs-44 {
+	font-size: 44rpx !important;
+}
+
+.fs-48 {
+	font-size: 48rpx !important;
+}
+
+.fs-50 {
+	font-size: 50rpx !important;
+}
+
+.fs-52 {
+	font-size: 52rpx !important;
+}
+
+.fs-56 {
+	font-size: 56rpx !important;
+}
+
+.fs-60 {
+	font-size: 60rpx !important;
+}
+
+.fs-64 {
+	font-size: 64rpx !important;
+}
+
+.fs-70 {
+	font-size: 70rpx !important;
+}
+
+.fs-72 {
+	font-size: 72rpx !important;
+}
+
+.fs-80 {
+	font-size: 80rpx !important;
+}
+
+.fw-4 {
+	font-weight: 400 !important;
+}
+
+.fw-5 {
+	font-weight: 500 !important;
+}
+
+.fw-6 {
+	font-weight: 600 !important;
+}
+.fw-7 {
+	font-weight: 700 !important;
+}
+
+.fw-b {
+	font-weight: bold !important;
+}
+
+.fw-m {
+	font-weight: Medium!important;
+}
+
+.td-lt {
+	text-decoration: line-through;
+}

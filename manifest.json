@@ -1,0 +1,171 @@
+{
+    "name" : "好获严选",
+    "appid" : "__UNI__C740F77",
+    "description" : "",
+    "versionName" : "v2.1.7",
+    "versionCode" : 217,
+    "transformPx" : false,
+    "app-plus" : {
+        /* 5+App特有相关 */
+        "kernel" : {
+            "ios" : "WKWebview",
+            "recovery" : "restart"
+        },
+        "modules" : {
+            "Payment" : {},
+            "Webview-x5" : {},
+            "OAuth" : {},
+            "Share" : {},
+            "UIWebview" : {},
+            "Push" : {},
+            "VideoPlayer" : {}
+        },
+        /* 模块配置 */
+        "distribute" : {
+            /* 应用发布信息 */
+            "android" : {
+                /* android打包配置 */
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ],
+                "schemes" : "citytp"
+            },
+            "ios" : {
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "选择身份证等信息用于实名认证",
+                    "NSPhotoLibraryAddUsageDescription" : "用于存储图片",
+                    "NSCameraUsageDescription" : "拍照身份证等信息用于实名认证"
+                },
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [ "applinks:ios.citytp.com" ]
+                    }
+                }
+            },
+            /* ios打包配置 */
+            "sdkConfigs" : {
+                "push" : {
+                    "unipush" : {}
+                },
+                "payment" : {
+                    "weixin" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appid" : "wxcd32a10e23f274e8",
+                        "UniversalLinks" : "https://ios.citytp.com/uni-universallinks/__UNI__C740F77"
+                    },
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                },
+                "oauth" : {
+                    "univerify" : {},
+                    "weixin" : {
+                        "appid" : "wxcd32a10e23f274e8",
+                        "appsecret" : "07e32895eee58a7612f06cbf61ff851e",
+                        "UniversalLinks" : "https://ios.citytp.com/uni-universallinks/__UNI__C740F77"
+                    }
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wxcd32a10e23f274e8",
+                        "UniversalLinks" : "https://ios.citytp.com/uni-universallinks/__UNI__C740F77"
+                    }
+                },
+                "ad" : {}
+            },
+            "splashscreen" : {
+                "androidStyle" : "common",
+                "android" : {
+                    "hdpi" : "static/drawable-hdpi/720x1242.9.png",
+                    "xhdpi" : "static/drawable-xhdpi/720x1242.9.png",
+                    "xxhdpi" : "static/drawable-xxhdpi/720x1242.9.png"
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            }
+        },
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    /* SDK配置 */
+    "quickapp" : {},
+    /* 快应用特有相关 */
+    "mp-weixin" : {
+        /* 小程序特有相关 */
+        "appid" : "wxee9ca1ab1b5cba4b",
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true,
+            "minified" : true
+        }
+    },
+    "h5" : {
+        "title" : "好获严选V1.0",
+        "devServer" : {
+            "port" : 8080,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/rest" : {
+                    "target" : "https://apppp.citytp.com",
+                    "changeOrigin" : true,
+                    "pathRewrite" : {
+                        "^/rest" : ""
+                    }
+                }
+            }
+        }
+    },
+    "_spaceID" : "62cda193-434e-4fb9-9334-bd57583c3b9e"
+}

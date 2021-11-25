@@ -1,0 +1,49 @@
+
+page {
+	background-color: #fff;
+}
+.container {
+	padding: 32rpx 60rpx;
+}
+.mt-12 {
+	margin-top: -12px;
+}
+.mb84 {
+	margin-bottom: 84rpx;
+}
+.border-btn {
+	-webkit-border-radius: 45rpx;
+	        border-radius: 45rpx;
+}
+.bg-pp {
+	background: -webkit-linear-gradient(323deg, #E93A37 0%, #FF6346 100%);
+	background: linear-gradient(127deg, #E93A37 0%, #FF6346 100%);
+}
+.cu-btn.lg {
+	font-size: 28rpx;
+	height: 90rpx;
+}
+.agreement-modal {
+	z-index: 10000;
+}
+.agreement-content {
+	height: 820rpx;
+	background: #FFFFFF;
+	opacity: 1;
+	-webkit-border-radius: 12px;
+	        border-radius: 12px;
+}
+.cu-bar {
+	height: 180rpx;
+	padding: 32rpx 48rpx;
+	-webkit-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.06);
+	        box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.06);
+}
+.line-de6 {
+	color: #303133;
+	border: 1px solid #DDDDE6;
+}
+.w154 {
+	width: 154rpx;
+}
+
