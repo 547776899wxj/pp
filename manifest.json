@@ -158,7 +158,8 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/rest" : {
-                    "target" : "https://apppp.citytp.com",
+                    // "target" : "https://apppp.citytp.com",
+                    "target" : "http://192.168.0.145:8202",
                     "changeOrigin" : true,
                     "pathRewrite" : {
                         "^/rest" : ""

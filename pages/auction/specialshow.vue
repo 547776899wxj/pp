@@ -5,7 +5,7 @@
 		<view style="height: 60rpx;"></view>
 		<!-- 搜索框 -->
 		<view class="flex-between ac pl32 pr32 auction-title-box">
-			<view class="back-btn" @tap="back()">
+			<!-- <view class="back-btn" @tap="back()">
 				<text class="cuIcon-back fc-f"></text>
 			</view>
 			<view class="flex-center fdc auction-title-info">
@@ -14,6 +14,9 @@
 			</view>
 			<view class="vip-coupon-btn flex-center" @click="showVipDialog=true" v-show="auction.auctionStatus ===0">
 				{{vipCouponAmount}}VIP券
+			</view> -->
+			<view class="flex-center fdc auction-title-info">
+				<view class="fs-36 lh-50 fc-f fw-b">拍卖商品</view>
 			</view>
 		</view>
 		<!-- 分类 -->
@@ -371,20 +374,16 @@
 								</view>
 								<view class="flex-between ai-fe">
 									<view class="dflex ai-fs fdc">
-										<view class="fs-24 lh-32 fc-e31 dflex ac mb12">
+										<!-- <view class="fs-24 lh-32 fc-e31 dflex ac mb12">
 											<text class="fs-22 fc-606">履约保障金：</text><text
 												class="fs-20">￥</text>{{item.auctionLotUserDepositMoney}}
-										</view>
+										</view> -->
 										<view class="fs-36 lh-36 fc-e31 fw-b"><text
 												class="fs-24">￥</text>{{item.auctionLotOutPrice}}</view>
 									</view>
 									<view class="small-btn fc-f lh-60 tc "
 										:class="{'m-bg-pp':item.stock>0,'m-bg-pp-unclick':item.stock===0}"
-										v-show="auction.auctionStatus===1 && !item.lock && item.stock>0"
 										@click.stop="openBuyDialog(item)">去抢购</view>
-									<view @click.stop="" class="small-btn fc-f lh-60 tc m-bg-pp-unclick"
-										v-show="auction.auctionStatus!==1 || item.lock || item.stock<=0">去抢购
-									</view>
 								</view>
 							</view>
 						</view>
@@ -438,9 +437,9 @@
 					</view> -->
 					<listempty :list="lotList" :loading="loading" />
 					<!-- <uni-pagination @change="changePage" title="标题文字" prevText="上一页" nextText="下一页" :total="totalCount" :pageSize="pageSize" :current="currentPage"></uni-pagination> -->
-					<page-pagination ref="paging" @change="changePage" :total="totalCount" :pageSize="pageSize"
+					<!-- <page-pagination ref="paging" @change="changePage" :total="totalCount" :pageSize="pageSize"
 						:showAround="true" :btnText="true" :forceEllipses="true" :currentPage="currentPage">
-					</page-pagination>
+					</page-pagination> -->
 
 					<!-- <view class="flex-center p20">当前页：{{currentPage}}, &nbsp;拍品总量：{{totalCount}}, &nbsp;每页数据：{{pageSize}}</view> -->
 					<view style="height: 100rpx;"></view>
@@ -552,14 +551,14 @@
 				scrollViewTop: 0,
 				loading: true,
 				queryObj: {
-					auctionId: '140',
+					auctionId: '0',
 					followed: false,
 				},
 				startData: {},
 				timerId: '',
 				waterfall: true,
 				stockTimerId: '',
-				scrollTop: 0
+				scrollTop: 0,
 			}
 		},
 		watch: {
@@ -568,22 +567,22 @@
 			}
 		},
 		onLoad(option) {
-			if (option.auctionId) {
-				this.queryObj.auctionId = option.auctionId
-			}
-			this.getAuction()
-			this.getAuctionCouponsCount()
-		},
-		onPullDownRefresh() {
-			this.getAuction()
-			this.getAuctionCouponsCount()
-			this.lotList = []
-			setTimeout(uni.stopPullDownRefresh, 500)
+			this.getAuctions();
 		},
 		onShow() {
+			uni.$auth.isLoginAndCheckPeopleStatus()
+			if(this.queryObj.auctionId != 0){
+				this.getAuction()
+				this.getAuctionCouponsCount()
+			}
+		},
+		onPullDownRefresh() {
+			this.lotList = []
 			this.getAuction()
 			this.getAuctionCouponsCount()
+			
 		},
+		
 		beforeDestroy() {
 			clearInterval(this.timerId)
 			clearInterval(this.stockTimerId)
@@ -596,6 +595,13 @@
 			console.log('destroyed')
 		},
 		methods: {
+			getAuctions() {
+				uni.$api.getAuctions().then(res => {
+					this.queryObj.auctionId = res.data[0].auctionId;
+					this.getAuction();
+					this.getAuctionCouponsCount()
+				})
+			},
 			start(e) {
 				this.startData.clientX = e.changedTouches[0].clientX;
 				this.startData.clientY = e.changedTouches[0].clientY;
@@ -622,7 +628,7 @@
 			},
 			changePage(currentPage, type) {
 				const current = currentPage
-				this.$refs['paging'].clickPage(current)
+				// this.$refs['paging'].clickPage(current)
 				const list = this.queryObj.followed ? this.allLots.filter(e => e.followed) : this.allLots
 				const {
 					totalPage
@@ -715,7 +721,7 @@
 					this.lotList =  this.topLots.concat(this.allLots.slice(0, this.pageSize).filter(e=>!this.topLotsIds.has(e.lotId)))
 					this.totalCount = this.allLots.length
 				}
-				this.$refs['paging'],this.$refs['paging'].clickPage(1)
+				// this.$refs['paging'],this.$refs['paging'].clickPage(1)
 			},
 			getAuction() {
 				this.getLots()
@@ -724,8 +730,11 @@
 					this.auction = res.data
 					this.vipCoupon = res.vipCoupon
 					this.nowTime = parseInt(res.nowTime)
+					uni.stopPullDownRefresh();
 					this.countDown()
 
+				}).catch((e) =>{
+					uni.stopPullDownRefresh();
 				})
 			},
 			countDown() {
@@ -836,7 +845,7 @@
 					}, 1000)
 
 					this.getAuctionLotStock()
-					this.lotStock()
+					// this.lotStock()
 				})
 			},
 			followLot(auctionLotAutoId, index) {
@@ -919,7 +928,7 @@
 	.auction-title-box {
 		z-index: 1;
 		position: relative;
-		padding: 12rpx 20rpx 12rpx 24rpx;
+		padding: 30rpx 20rpx 12rpx 24rpx;
 	}
 
 	.back-btn {
@@ -935,7 +944,7 @@
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-		top: 0;
+		top: 20rpx;
 		bottom: 0;
 		z-index: -1;
 	}

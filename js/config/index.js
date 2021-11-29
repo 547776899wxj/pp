@@ -7,8 +7,8 @@ var domain; // 第三方设置
 
 const extConfig = {};
 
-// domain = 'https://testapppp.citytp.com';
-domain = 'http://192.168.2.152:8202';
+// domain = 'https://apppp.citytp.com';
+domain = 'http://192.168.0.145:8202';
 // #ifdef H5
 	domain = '/rest'; 
 // #endif

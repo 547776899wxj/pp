@@ -20,19 +20,19 @@
 				</view>
 			</view>
 			<view class="auction-price-box">
-				<view class="fs-28 fc-303 lh-40 mb16">转拍售价</view>
+				<view class="fs-28 fc-303 lh-40 mb16">上架售价</view>
 				<view class="price-input mb16 dflex ac">
 					<view class="fs-30 lh-40 fc-606">￥</view>
 					<input type="number" v-model="lotOutPrice" @blur="getAuctionLotDepositMoney">
 				</view>
-				<view class="fs-24 lh-34 fc-939">
+				<!-- <view class="fs-24 lh-34 fc-939">
 					注：转拍价不能高出拍入价{{lotObj.lotInPrice>3000?auctionConfig.auctionMoneyUpLimit:auctionConfig.auctionMoneyUpLimit2}}%，即最高可卖¥{{maxLotOutPrice}}
-					</view>			
-					<view class="fs-24 lh-34 fc-939" v-if="leaveLotCount>0">
+					</view> -->			
+					<!-- <view class="fs-24 lh-34 fc-939" v-if="leaveLotCount>0">
 					您的拍品已经流拍{{leaveLotCount}}次了，流拍3次之后只能留下自用
-					</view>
+					</view> -->
 			</view>
-			<view class="remark-list flex-between ac" v-if="couponEnable">
+			<!-- <view class="remark-list flex-between ac" v-if="couponEnable">
 				<view class="fs-28 fc-303 fw-b">使用券</view>
 				<view class="fs-28 fc-606 dflex ac" @click="showCoupon=true">
 					<template>{{couponTypeNameObj[putLotObj.couponType+'']||'请选择'}}</template>
@@ -52,18 +52,19 @@
 						<view  class="dflex ac"><view>{{topDay||'请选择'}}</view><image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image>
 				</view>
 				</picker>
-			</view>
+			</view> -->
 		</view>
 		<view class="cu-bar dflex fdc bg-white tabbar border submit-box">
-			<view class="wp100 pt12 pb12">
+			<view class="wp100 pt12 pb12 dflex justify-between">
 				<label class="dflex jc-fs ac wp100" @tap="changeCheck">
 					<checkbox class="hh-radio fs-0 mr16 round" :class="isCheck?'checked':''" :checked="isCheck" >
 					</checkbox>
 					<view class="fs-22 lh-32 fc-939">我已阅读并同意 <text class="fc-2e8" @click.stop="toAgreement">《拍卖委托协议》</text>
 					</view>
 				</label>
+				<button class="cu-btn bg-pp fc-f round" @tap="pubAuctionLot">确认上架</button>
 			</view>
-			<view class="wp100 flex-between ac pt12 pb12">
+			<!-- <view class="wp100 flex-between ac pt12 pb12">
 				<view class="action">
 					<view class="dflex ac">
 						<view class="fs-20 lh-28 fc-303 mt8">佣金：</view>
@@ -77,7 +78,7 @@
 					<view class="fs-22 lh-32 fc-939 tl" v-show="lotOutPrice<lotObj.lotInPrice">佣金为转拍跌价的{{auctionConfig.auctionLowerRate}}%</view>
 				</view>
 				<button class="cu-btn bg-pp fc-f round" @tap="pubAuctionLot">确认支付</button>
-			</view>
+			</view> -->
 		</view>
 		<view class="cu-modal agreement-modal" :class="{show:showPop}">
 			<view class="cu-dialog">
@@ -184,7 +185,7 @@
 					}
 					this.putLotObj.lotId = this.lotObj.lotId;
 					this.maxLotOutPrice = res.maxLotOutPrice;
-					this.lotOutPrice = res.maxLotOutPrice;
+					this.lotOutPrice = this.lotInPrice[0];
 					this.leaveLotCount = res.leaveLotCount;
 					this.neartime = res.neartime
 					this.auctionConfig = res.config
@@ -208,15 +209,15 @@
 					uni.$toast.showError('请输入转拍售价')
 					return 
 				}
-				if(this.putLotObj.couponType && !this.putLotObj.autionDate){
-					uni.$toast.showError('请选择挂拍场次时间')
-					return
-				}
-				if(this.putLotObj.couponType ===''){
-					this.putLotObj.autionDate = this.neartime;
-				}
-				uni.$api.pubAuctionLot(this.putLotObj).then(res => {
-					uni.$toast.showSuccess('转拍成功！')
+				// if(this.putLotObj.couponType && !this.putLotObj.autionDate){
+				// 	uni.$toast.showError('请选择挂拍场次时间')
+				// 	return
+				// }
+				// if(this.putLotObj.couponType ===''){
+				// 	this.putLotObj.autionDate = this.neartime;
+				// }
+				uni.$api.shelvesLot(this.putLotObj).then(res => {
+					uni.$toast.showSuccess('上架成功成功！')
 					setTimeout(function(){
 									uni.navigateBack({});
 					},400)

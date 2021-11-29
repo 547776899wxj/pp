@@ -16,8 +16,9 @@
 				<view class="fs-24 lh-34 fc-f"><text class="op75">您的拍品已拍出</text></view>
 			</view>
 			<view class="flex-center fdc auction-title-info" v-if="lotObj.lotHangupStatus===1">
-				<view class="fs-36 lh-50 fc-f fw-b mb4">转拍中 - 申请挂拍</view>
-				<view class="fs-24 lh-34 fc-f"><text class="op75">等待拍卖人员的审核</text></view>
+				<!-- <view class="fs-36 lh-50 fc-f fw-b mb4">转拍中 - 申请上架</view> -->
+				<view class="fs-36 lh-50 fc-f fw-b mb4">等待上架拍卖</view>
+				<!-- <view class="fs-24 lh-34 fc-f"><text class="op75">等待拍卖人员的审核</text></view> -->
 			</view>
 			<view class="flex-center fdc auction-title-info" v-if="lotObj.lotStatus===2&&lotObj.lotHangupStatus===2">
 				<view class="fs-36 lh-50 fc-f fw-b mb4">转拍中</view>
@@ -60,38 +61,38 @@
 			</view>
 			<!-- 已拍下 -->
 			<view class="order-info-box" v-for="item in lotLogs" :key="item.auctionLotAutoId" >
-				<view class="fs-28 lh-40 fw-b fc-303 mb32" v-once>挂拍记录</view>
+				<view class="fs-28 lh-40 fw-b fc-303 mb32" v-once>上架记录</view>
 				<view class="flex-between ac">
 					<view class="fs-32 lh-36 fw-b fc-303">{{item.no}}</view>
 					<view class="fs-24 lh-34 fc-939">{{item.auctionLotHangupStatusStr}}</view>
 				</view>
 				<view class="info-list">
-					<view class="fs-24 lh-34 fc-303">挂拍价</view>
+					<view class="fs-24 lh-34 fc-303">上架价</view>
 					<view class="dflex ai-fe">
 						<view class="fs-24 fc-e31">￥</view>
 						<view class="fs-32 lh-32 fc-e31 fw-b">{{item.auctionLotOutPrice}}</view>
 						<view class="fs-20 fc-e31"></view>
 					</view>
 				</view>
-				<view class="info-list">
+			<!-- 	<view class="info-list">
 					<view class="fs-24 lh-34 fc-303">场次</view>
 					<view class="dflex ac">
 						<view class="fs-24 lh-34 fc-303 mr8">{{item.auctionName}}</view>
 						<view class="fs-24 lh-34 fc-303"></view>
 					</view>
-				</view>
+				</view> -->
 				<view class="info-list">
 					<view class="fs-24 lh-34 fc-303">开拍时间</view>
 					<view class="fs-24 lh-34 fc-303">{{item.auctionBeginTime}}</view>
 				</view>
-				<view class="info-list">
+			<!-- 	<view class="info-list">
 					<view class="fs-24 lh-34 fc-303">佣金</view>
 					<view class="fs-24 lh-34 fc-303">￥{{item.auctionLotDepositMoney}}</view>
-				</view>
-				<view class="info-list">
+				</view> -->
+				<!-- <view class="info-list">
 					<view class="fs-24 lh-34 fc-303">缴纳时间</view>
 					<view class="fs-24 lh-34 fc-303">{{item.auctionLotDepositTime}}</view>
-				</view>
+				</view> -->
 			</view>
 			<view class="order-info-box">
 				<view class="fs-28 lh-40 fw-b fc-303">拍品信息</view>
@@ -133,14 +134,14 @@
 					<view class="fs-24 lh-34 fc-303">{{auctionLot.orderEndTime}}</view>
 				</view>
 			</view>
-			<view class="order-info-box" v-if="lotObj.lotHangupStatus===1">
+			<!-- <view class="order-info-box" v-if="lotObj.lotHangupStatus===1">
 				<view class="fs-28 lh-40 fw-b fc-303">申请拍卖信息</view>
 				<view class="info-list" >
-					<view class="fs-24 lh-34 fc-303 ">申请挂拍场次时间</view>
+					<view class="fs-24 lh-34 fc-303 ">申请上架场次时间</view>
 					<view class="fs-24 lh-34 fc-303" v-if="lotObj.lotAuctionAppTime">{{lotObj.lotAuctionAppTime.replace('00:00:00','')}}</view>
 				</view>
 				<view class="info-list" >
-					<view class="fs-24 lh-34 fc-303 ">挂拍价</view>
+					<view class="fs-24 lh-34 fc-303 ">上架价</view>
 					<view class="fs-24 lh-34 fc-303">￥{{lotObj.lotOutPrice}}</view>
 				</view>
 				<view class="info-list" >
@@ -151,7 +152,7 @@
 					<view class="fs-24 lh-34 fc-303 ">佣金预缴时间</view>
 					<view class="fs-24 lh-34 fc-303">    {{lotObj.lotDepositTime}}</view>
 				</view>
-				</view>
+				</view> -->
 		</view>
 		<!-- tabbar 占位 -->
 		<view style="height: (50px + env(safe-area-inset-bottom) / 2);min-height: 100rpx;"></view>
@@ -161,7 +162,8 @@
 			<button class="cu-btn line-btn fc-303 round mr24" v-if="lotObj.lotSecondStatus == 1" @tap="toLogistics">查看物流</button>
 			<button class="cu-btn bg-pp fc-f round ml24" v-if="lotObj.lotSecondStatus == 1" @click.stop="confirmPackage">确认收货</button>
 			<button class="cu-btn bg-pp fc-f round" v-if="lotObj.lotStatus===1&& (lotObj.lotHangupStatus!==1 && lotObj.lotHangupStatus!==2 && lotObj.lotHangupStatus!==3)" @tap="toPubLot">转拍</button>
-			<button class="cu-btn bg-pp fc-f round" v-if="lotObj.canPut" @tap="toPubLot">转拍</button>
+			<!-- <button class="cu-btn bg-pp fc-f round" v-if="lotObj.canPut" @tap="toPubLot">转拍</button> -->
+			<button class="cu-btn bg-pp fc-f round"  @tap="toPubLot">上架拍卖</button>
 		</view>
 		<customer :show="customerAlert" @cancel="customerAlert=false"></customer>
 	</view>

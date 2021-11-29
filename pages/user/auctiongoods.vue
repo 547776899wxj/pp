@@ -42,11 +42,11 @@
 							v-if="item.lotStatus===3">
 							留下自用</view> -->
 					</view>
-					<view class="goods-info dflex ai-fs mb16">
+					<view class="goods-info dflex ai-fs mb16" @tap="toLotDetail(item.lotId)">
 						<image :src="item.lotImage" class="goods-image mr16" mode=""
-							@tap="toLotDetail(item.lotId)"></image>
+							></image>
 						<view class="flex-1">
-							<view class="flex-between ai-fs mb16" @tap="toLotDetail(item.lotId)">
+							<view class="flex-between ai-fs mb16" >
 								<view class="goods-name">{{item.lotName}}</view>
 							</view>
 							<view class="fs-24 lh-34 fc-939"></view>
@@ -181,7 +181,8 @@
 				if (this.queryObj.pageNumber < this.pageCount) {
 					this.queryObj.pageNumber++
 					uni.$api.getAuctionLots(this.queryObj).then(res => {
-						this.lotList.push(...res.rows)
+						// this.lotList.push(...res.rows)
+						this.lotList = this.lotList.concat(res.rows);
 					})
 				}
 

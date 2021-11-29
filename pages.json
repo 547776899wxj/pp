@@ -197,7 +197,7 @@
 					"bounce":"none"
 				},
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": true
             }
             
         }
@@ -994,7 +994,8 @@
 	        "selectedIconPath": "static/tabbar/goods-cur.png",
 	        "text": "商品"
 	    },{
-	        "pagePath": "pages/auction/index",
+	        // "pagePath": "pages/auction/index",
+	        "pagePath": "pages/auction/specialshow",
 	        "iconPath": "static/tabbar/auction.png",
 	        "selectedIconPath": "static/tabbar/auction-cur.png",
 	        "text": "拍卖"
