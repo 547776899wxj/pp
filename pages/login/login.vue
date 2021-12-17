@@ -255,7 +255,7 @@
 			},
 			onLoginClose:function(){
 				uni.switchTab({
-					url:"/pages/index/main"
+					url:"/pages/auction/specialshow"
 				})
 				// if(getCurrentPages().length == 1){
 				// 	uni.switchTab({

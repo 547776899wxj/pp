@@ -48,7 +48,7 @@
 				uni.$api.getOnSaleTopOne().then(res =>{
 					this.info = res.data || {}
 					if (!this.info.gameBoxId){
-						uni.$toast.alert('盲盒活动已结束').then(()=>{
+						uni.$toast.alert('活动已结束').then(()=>{
 							uni.switchTab({
 								url:'/pages/index/main'
 							})

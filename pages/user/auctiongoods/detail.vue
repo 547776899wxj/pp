@@ -18,14 +18,14 @@
 			<view class="flex-center fdc auction-title-info" v-if="lotObj.lotHangupStatus===1">
 				<!-- <view class="fs-36 lh-50 fc-f fw-b mb4">转拍中 - 申请上架</view> -->
 				<view class="fs-36 lh-50 fc-f fw-b mb4">等待上架拍卖</view>
-				<!-- <view class="fs-24 lh-34 fc-f"><text class="op75">等待拍卖人员的审核</text></view> -->
+				<!-- <view class="fs-24 lh-34 fc-f"><text class="op75"></text></view> -->
 			</view>
 			<view class="flex-center fdc auction-title-info" v-if="lotObj.lotStatus===2&&lotObj.lotHangupStatus===2">
-				<view class="fs-36 lh-50 fc-f fw-b mb4">转拍中</view>
-				<view class="fs-24 lh-34 fc-f"><text class="op75">{{lotObj.lotHangupStatusStr}}</text></view>
+				<view class="fs-36 lh-50 fc-f fw-b mb4">已上架</view>
+				<view class="fs-24 lh-34 fc-f"><text class="op75">未拍出</text></view>
 			</view>
 			<view class="flex-center fdc auction-title-info" v-if="lotObj.lotStatus===3">
-				<view class="fs-36 lh-50 fc-f fw-b mb4">留下自用</view>
+				<view class="fs-36 lh-50 fc-f fw-b mb4">已售出</view>
 				<view class="fs-24 lh-34 fc-f"><text class="op75">{{lotObj.lotHangupStatusStr}}</text></view>
 			</view>
 		</view>
@@ -163,7 +163,7 @@
 			<button class="cu-btn bg-pp fc-f round ml24" v-if="lotObj.lotSecondStatus == 1" @click.stop="confirmPackage">确认收货</button>
 			<button class="cu-btn bg-pp fc-f round" v-if="lotObj.lotStatus===1&& (lotObj.lotHangupStatus!==1 && lotObj.lotHangupStatus!==2 && lotObj.lotHangupStatus!==3)" @tap="toPubLot">转拍</button>
 			<!-- <button class="cu-btn bg-pp fc-f round" v-if="lotObj.canPut" @tap="toPubLot">转拍</button> -->
-			<button class="cu-btn bg-pp fc-f round"  @tap="toPubLot">上架拍卖</button>
+			<button class="cu-btn bg-pp fc-f round mr24" v-if='lotObj.lotHangupStatus == 1'  @tap="toPubLot">上架拍卖</button>
 		</view>
 		<customer :show="customerAlert" @cancel="customerAlert=false"></customer>
 	</view>

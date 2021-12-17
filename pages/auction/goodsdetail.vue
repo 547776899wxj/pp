@@ -110,8 +110,8 @@
 				</view>
 			</view>
 			<view class="btn-group">
-				<button class="cu-btn bg-pp fc-f round" v-show="auction.auctionStatus===1 && !lotObj.lock" @click="secKillLot">立即购买</button>
-				<button class="cu-btn m-bg-pp-unclick fc-f round" v-show="auction.auctionStatus!==1 || lotObj.lock" >立即购买</button>
+				<button class="cu-btn bg-pp fc-f round" v-show="!lotObj.lock" @click="secKillLot">立即购买</button>
+				<!-- <button class="cu-btn m-bg-pp-unclick fc-f round" v-show="auction.auctionStatus!==1 || lotObj.lock" >立即购买</button> -->
 			</view>
 		</view>
 		<customer :show="customerAlert" @cancel="customerAlert=false"></customer>

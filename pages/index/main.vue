@@ -92,7 +92,7 @@
 				</view>
 			</view>
 		</view> -->
-		<view class="auction-box mb40" v-if="auction" @click="toAuction()">
+<!-- 		<view class="auction-box mb40" v-if="auction" @click="toAuction()">
 			<image src="../../static/img/bg/acution-bg.png" mode="widthFix" class="auction-bg"></image>
 			<view class="flex-between ac mb28">
 				<view class="dflex ac">
@@ -113,10 +113,9 @@
 				<view class="auction-list flex-center fdc" v-for="(item,index) in auctionLotList" :keys="index">
 					<image :src="item.lotImage" mode="widthFix"></image>
 					<view class="fs-32 lh-32 fc-fb2 fw-b dflex ai-fe mb8"><view class="fs-24 lh-24 fc-fb2 mb2">￥</view>{{item.auctionLotOutPrice}}</view>
-					<!-- <view class="fs-24 lh-24 fc-9 td-lt">￥{{item.auctionLotOutPrice}}</view> -->
 				</view>			
 			</view>
-		</view>
+		</view> -->
 		<view class="notice-box">
 			<view class="notice-icon">公告</view>
 			<view class="fs-26 lh-26 fc-3 notice-info">{{shopNotice}}</view>

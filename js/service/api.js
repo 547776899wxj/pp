@@ -86,6 +86,9 @@ export const getOnSaleGameBoxCount = data => post('/rest/v4/pp/app/gamebox/getOn
 export const getOnSaleTopOne = data => post('/rest/v4/pp/app/gamebox/getOnSaleTopOne', data);
 /** 创建盲盒订单支付计划 **/
 export const createGameBoxOrderPayPlan = data => post('/rest/v4/pp/app/user/createGameBoxOrderPayPlan', data);
+//我的拍品
+export const getLotsByUser = data => post('/rest/v4/pp/app/auction/getLotsByUser', data);
+
 export const shelvesLot = data => {
 	return post('/rest/v4/pp/auction/shelvesLot ', data);
 }

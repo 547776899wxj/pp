@@ -11,11 +11,11 @@
 					<view class="fs-50 lh-50 mb4">￥</view>{{ order.orderPayMoney| intFormat}}{{ order.orderPayMoney| decimalFormat}}
 				</view>
 			</view>
-			<view class="dflex ai-fs jc-c mb70">
+			<!-- <view class="dflex ai-fs jc-c mb70">
 				<image src="../../static/img/icon/warning.png" mode="widthFix" class="warning fs-0 mr6 mt10"></image>
 				<view class="fs-30 lh-50 fc-d52 tc wm540">请进入我的拍品进行转拍或留下，如果{{days}}天之内不进行转拍，默认视为留下自用</view>
-			</view>
-			<view class="detail-btn flex-center" @click="goToAuctionGoods">进入我的拍品</view>
+			</view> -->
+			<view class="detail-btn flex-center" @click="goToAuctionGoods">进入我的订单</view>
 			<view class="blind-box mt116" v-if="onSaleGameBoxCount > 0">
 				<image class="wp100" src="../../static/img/images/blind-banner.png" mode="widthFix" @click="gotoGameBoxDetail"></image>
 			</view>
@@ -65,8 +65,8 @@
 				})
 			},
 			goToAuctionGoods(){
-				uni.navigateTo({
-					url:'/pages/user/auctiongoods?from=paysuccess'
+				uni.switchTab({
+					url:'/pages/order/order'
 				})
 			},
 			gotoGameBoxDetail(){

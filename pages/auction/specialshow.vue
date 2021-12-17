@@ -381,9 +381,8 @@
 										<view class="fs-36 lh-36 fc-e31 fw-b"><text
 												class="fs-24">￥</text>{{item.auctionLotOutPrice}}</view>
 									</view>
-									<view class="small-btn fc-f lh-60 tc "
-										:class="{'m-bg-pp':item.stock>0,'m-bg-pp-unclick':item.stock===0}"
-										@click.stop="openBuyDialog(item)">去抢购</view>
+									<view class="small-btn fc-f lh-60 tc m-bg-pp"
+										@click.stop="openBuyDialog(item)">立即购买</view>
 								</view>
 							</view>
 						</view>
@@ -597,6 +596,10 @@
 		methods: {
 			getAuctions() {
 				uni.$api.getAuctions().then(res => {
+					if(res.data.length == 0){
+						this.loading = false
+						return
+					}
 					this.queryObj.auctionId = res.data[0].auctionId;
 					this.getAuction();
 					this.getAuctionCouponsCount()
@@ -872,6 +875,11 @@
 				this.currentLot = lot
 				if (uni.getStorageSync('lotUserDepositTips')) {
 					this.secKillLot()
+					// lot.auctionId = this.queryObj.auctionId;
+					// uni.setStorageSync('ppAddorderData',lot)
+					// uni.navigateTo({
+					// 	url: '../order/ppAddorder',
+					// });
 					return
 				}
 				this.showBuyDialog = true
@@ -891,7 +899,9 @@
 				}).then(res => {
 					uni.$session.lockLotId(this.queryObj.auctionId, this.currentLot.auctionLotAutoId)
 					this.currentLot.lock = true
-					uni.$toast.showSuccess('抢购成功')
+					uni.navigateTo({
+						url:'/pages/order/orderpay?orderId='+res.orderId
+					})
 				}).catch(e => {
 					uni.$toast.showError(e.message)
 				})

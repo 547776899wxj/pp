@@ -225,6 +225,7 @@
 			},
 			getAuctionLotDepositMoney() {
 				this.putLotObj.lotOutPrice = this.lotOutPrice
+				this.putLotObj.lotPrice = this.lotOutPrice
 				if (this.lotOutPrice) {
 					uni.$api.getAuctionLotDepositMoney(this.putLotObj).then(res => {
 						this.depositMoney = (res.data + '').split('.')

@@ -2,6 +2,18 @@
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/auction/specialshow",
+		    "style" :                                                                                    
+		    {
+				"app-plus":{
+					"bounce":"none"
+				},
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": true
+		    }
+		    
+		},
+		{
 			"path": "pages/index/main",
 			"style": {
 				"app-plus":{
@@ -189,18 +201,7 @@
             }
             
         }
-        ,{
-            "path" : "pages/auction/specialshow",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
+       
 		,{
             "path" : "pages/auction/centuryLots",
             "style" :                                                                                    
@@ -275,6 +276,17 @@
         }
         ,{
             "path" : "pages/order/addorder",
+            "style" :                                                                                    
+            {
+				"app-plus":{
+					"bounce":"none"
+				},
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        } ,{
+            "path" : "pages/order/ppAddorder",
             "style" :                                                                                    
             {
 				"app-plus":{
@@ -984,21 +996,23 @@
 		// 	"color": "#fff"
 		// },
 	    "list": [{
-	        "pagePath": "pages/index/main",
+	        "pagePath": "pages/auction/specialshow",
 	        "iconPath": "static/tabbar/index.png",
 	        "selectedIconPath": "static/tabbar/index-cur.png",
 	        "text": "首页"
-	    },{
-	        "pagePath": "pages/goods/list",
-	        "iconPath": "static/tabbar/goods.png",
-	        "selectedIconPath": "static/tabbar/goods-cur.png",
-	        "text": "商品"
-	    },{
+	    },
+		// {
+	 //        "pagePath": "pages/goods/list",
+	 //        "iconPath": "static/tabbar/goods.png",
+	 //        "selectedIconPath": "static/tabbar/goods-cur.png",
+	 //        "text": "商品"
+	 //    },
+		{
 	        // "pagePath": "pages/auction/index",
-	        "pagePath": "pages/auction/specialshow",
+	        "pagePath": "pages/user/auctiongoods",
 	        "iconPath": "static/tabbar/auction.png",
 	        "selectedIconPath": "static/tabbar/auction-cur.png",
-	        "text": "拍卖"
+	        "text": "拍品"
 	    },{
 	        "pagePath": "pages/order/order",
 	        "iconPath": "static/tabbar/order.png",

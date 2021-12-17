@@ -2,8 +2,8 @@
     "name" : "好获严选",
     "appid" : "__UNI__C740F77",
     "description" : "",
-    "versionName" : "v2.1.7",
-    "versionCode" : 217,
+    "versionName" : "2.1.9",
+    "versionCode" : 219,
     "transformPx" : false,
     "app-plus" : {
         /* 5+App特有相关 */
@@ -159,13 +159,18 @@
             "proxy" : {
                 "/rest" : {
                     // "target" : "https://apppp.citytp.com",
-                    "target" : "http://192.168.0.145:8202",
+                    // "target" : "http://192.168.0.149:8202",
+                    "target" : "http://120.55.15.192:8202",
                     "changeOrigin" : true,
                     "pathRewrite" : {
                         "^/rest" : ""
                     }
                 }
             }
+        },
+        "router" : {
+            "mode" : "hash",
+            "base" : "./"
         }
     },
     "_spaceID" : "62cda193-434e-4fb9-9334-bd57583c3b9e"

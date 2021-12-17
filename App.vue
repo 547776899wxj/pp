@@ -170,30 +170,47 @@
 				}
 				//#endif  
 			},
-			downLoadNewApk (url) {
+			downLoadNewApk(url) {
 				// uni.$toast.showToast("正在后台下载中，请稍候");
-				//直接安装
-				 var downloadTask = uni.downloadFile({  
-					url: url,  
-					success: (downloadResult) => {  
-						if (downloadResult.statusCode === 200) {  
-							plus.runtime.install(downloadResult.tempFilePath, {  
-								force: false  
-							}, function() {  
-								console.log('install success...');  
-								plus.runtime.restart();  
-							}, function(e) {  
-								console.error('install fail...');  
-							});  
+				// forceUpdate == 1 静默更新 只能更新wgt包
+				var showLoading = null;
+				var downloadTask = uni.downloadFile({
+					url: url,
+					success: downloadResult => {
+						if (downloadResult.statusCode === 200) {
+							plus.runtime.install(downloadResult.tempFilePath,{force: false},
+								function() {
+									showLoading.close();
+									plus.runtime.restart();
+								},
+								function(e) {
+									uni.showModal({
+										title: '提示',
+										content: '下载失败',
+										showCancel: false,
+										success: res => {},
+									});
+									showLoading.close();
+								}
+							);
+						}else{
+							uni.showModal({
+								title: '提示',
+								content: '下载失败',
+								showCancel: false,
+								success: res => {},
+							});
+							showLoading.close();
 						}
 					}
-				}); 
-				 var showLoading = plus.nativeUI.showWaiting("正在下载");
-				 var prg = 0
-				 downloadTask.onProgressUpdate(e => {
-					 prg = parseInt(e.progress)
-					 showLoading.setTitle("  正在下载" + prg + "%,请勿关闭页面  ");
-				 })
+				});
+			
+				showLoading = plus.nativeUI.showWaiting('正在下载');
+				var prg = 0;
+				downloadTask.onProgressUpdate(e => {
+					prg = parseInt(e.progress);
+					showLoading.setTitle('  正在下载' + prg + '%,请勿关闭页面  ');
+				});
 			},
 			checkAndroidUpdate () {
 				var that = this

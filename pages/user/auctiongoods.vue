@@ -1,26 +1,36 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-f6" isBack backMethod="backHandle" @back-handle="backHandle">
+		<!-- <cu-custom bgColor="bg-f6"  backMethod="backHandle" @back-handle="backHandle">
 			<block slot="backText"></block>
 			<block slot="content">拍品管理</block>
-		</cu-custom>
+		</cu-custom> -->
+		<view style="height: 60rpx;"></view>
+		<view class="cu-bar">
+			<view class="action title-style-3">
+				<text class="text-xl text-bold">我的拍品</text>
+			</view>
+		</view>
 		<view class="flex-between ac">
-			<view class="order-nav" @click="queryObj.lotType='',getAuctionLots()" :class="{
-					cur:queryObj.lotType===''
+			<view class="order-nav" @click="orderNavClick(0)" :class="{
+					cur:queryObj.lotType===0
 				}">全部 <view class="cur-icon"></view>
 			</view>
-			<view class="order-nav" @click="queryObj.lotType=1,getAuctionLots()" :class="{
-					cur:queryObj.lotType===1
-				}">已拍下 <view class="cur-icon"></view>
-			</view>
-			<view class="order-nav" @click="queryObj.lotType=2,getAuctionLots()" :class="{
+			<view class="order-nav" @click="orderNavClick(2)" :class="{
 					cur:queryObj.lotType===2
-				}">转拍中 <view class="cur-icon"></view>
+				}">已上架 <view class="cur-icon"></view>
 			</view>
-			<view class="order-nav" @click="queryObj.lotType=3,getAuctionLots()" :class="{
+			<view class="order-nav" @click="orderNavClick(1)" :class="{
+					cur:queryObj.lotType===1
+				}">未上架 <view class="cur-icon"></view>
+			</view>
+			<view class="order-nav" @click="orderNavClick(4)" :class="{
+					cur:queryObj.lotType===4
+				}">已售出 <view class="cur-icon"></view>
+			</view>
+		<!-- 	<view class="order-nav" @click="queryObj.lotType=3,getAuctionLots()" :class="{
 					cur:queryObj.lotType===3
 				}">留下自用 <view class="cur-icon"></view>
-			</view>
+			</view> -->
 			
 			<!-- <view class="order-nav" @click="queryObj.lotType=4,getAuctionLots()" :class="{
 					cur:queryObj.lotType===4
@@ -36,7 +46,7 @@
 						
 						<view class="fs-24 lh-34 fc-ff4"
 						>
-							{{item.lotStatusStr}} - {{item.lotHangupStatusStr}}</view>
+							 {{item.lotHangupStatusStr}}</view>
 						<!-- <view class="fs-24 lh-34 fc-ff4" v-if="item.lotStatus===2">拍卖中</view>
 						<view class="fs-24 lh-34 fc-ff4"
 							v-if="item.lotStatus===3">
@@ -62,7 +72,7 @@
 						<text class="fs-24 fc-303">￥</text>
 						<view class="fs-36 lh-44 fc-303 fw-b">{{item.lotOutPrice}}</view>
 					</view> -->
-					<view class="dflex ac jc-end mt24">
+					<!-- <view class="dflex ac jc-end mt24">
 						<view class="small-radio-btn line-btn flex-center"
 							v-if="item.lotStatus===1 && (item.lotHangupStatus!==1 && item.lotHangupStatus!==2&& item.lotHangupStatus!==3)"
 							@tap="toPubLot(item.lotId)">转拍</view>
@@ -75,12 +85,12 @@
 							v-if="item.lotSecondStatus===1">查看物流</view>
 							<view class="small-radio-btn pp-line-btn flex-center" @tap="confirmPackage(item.lotOrderId)"
 								v-if="item.lotSecondStatus===1">确认收货</view>
-					</view>
+					</view> -->
 				</view>
 				<!-- 保留底部空白部分 -->
 				<view style="width: 100%;height: 36rpx;"></view>
-				<listempty :list="lotList"></listempty>
-				<nomore :pageCount="pageCount" :pageNumber="queryObj.pageNumber"></nomore>
+				<listempty :list="lotList" v-show="!isShowLoding"></listempty>
+				<!-- <nomore :pageCount="limit" :pageNumber="lotList.length"></nomore> -->
 			</scroll-view>
 		</view>
 	</view>
@@ -98,13 +108,20 @@
 			return {
 				lotList: [],
 				queryObj: {
-					lotType: ''
+					lotType: 0
 				},
 				pageIndex: '',
 				pageCount: 0,
 				CustomBar: this.CustomBar,
-
-
+				limit:10,
+				offset:0,
+				isReachBottom:false,
+				isShowLoding:true,
+			}
+		},
+		watch:{
+			'queryObj.lotType'(newShow){
+				this.lotList = [];
 			}
 		},
 		computed: {
@@ -115,18 +132,25 @@
 			}
 		},
 		onLoad({lotType='',from=''}) {
-			this.queryObj.lotType = parseInt(lotType)||''
+			this.queryObj.lotType = parseInt(lotType)||0
 			this.from = from
-			uni.$once('backHandle',this.backHandle)
+			uni.$once('backHandle',this.backHandle);
+			this.getAuctionLots()
 		},
-        onShow() {
-        	this.getAuctionLots()
-        },
+      
 		onPullDownRefresh() {
 			setTimeout(uni.stopPullDownRefresh,500)
+			this.lotList = [];
 			this.getAuctionLots()
 		},
 		methods: {
+			orderNavClick(e){
+				if(e===this.queryObj.lotType){
+					return
+				}
+				this.queryObj.lotType = e;
+				this.getAuctionLots();
+			},
 			backHandle(){
 				if(this.from){
 					uni.switchTab({
@@ -169,21 +193,41 @@
 				})
 			},
 			getAuctionLots() {
-				this.lotList = []
-				this.queryObj.pageNumber = 1
-				uni.$api.getAuctionLots(this.queryObj).then(res => {
-					this.lotList = res.rows || []
-					this.pageIndex = res.pageIndex
-					this.pageCount = res.pageCount
+				// this.lotList = []
+				// this.queryObj.pageNumber = 1
+				// uni.$api.getAuctionLots(this.queryObj).then(res => {
+				// 	this.lotList = res.rows || []
+				// 	this.pageIndex = res.pageIndex
+				// 	this.pageCount = res.pageCount
+				// })
+				this.isShowLoding = true;
+				uni.showLoading({
+					title:'加载中'
+				})
+				uni.$api.getLotsByUser({
+					offset: this.offset,
+					limit: this.limit,
+					lotHangupStatus: this.queryObj.lotType
+				}).then(res =>{
+					this.lotList = this.lotList.concat(res.data);
+					this.isShowLoding = false;
+					uni.hideLoading();
+					if(res.data.length < this.limit){
+						this.isReachBottom = false;
+					}
 				})
 			},
 			loadMore() {
-				if (this.queryObj.pageNumber < this.pageCount) {
-					this.queryObj.pageNumber++
-					uni.$api.getAuctionLots(this.queryObj).then(res => {
-						// this.lotList.push(...res.rows)
-						this.lotList = this.lotList.concat(res.rows);
-					})
+				// if (this.queryObj.pageNumber < this.pageCount) {
+				// 	this.queryObj.pageNumber++
+				// 	uni.$api.getAuctionLots(this.queryObj).then(res => {
+				// 		// this.lotList.push(...res.rows)
+				// 		this.lotList = this.lotList.concat(res.rows);
+				// 	})
+				// }
+				if(this.isReachBottom){
+					this.offset += this.limit;
+					this.getAuctionLots() 
 				}
 
 			},

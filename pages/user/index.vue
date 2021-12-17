@@ -25,7 +25,7 @@
 			<image class="user-image" :src="user.userPhoto?user.userPhoto:'/static/img/icon/default-user.png'"></image>
 		</view>
 		<view class="container">
-			<view class="user-info-list">
+			<!-- <view class="user-info-list">
 				<view class="user-invite bg-white mb2" v-if="ckVersion != 1">
 					<view class="flex-between ac hp100">
 						<view class="dflex jc-fs fdc">
@@ -54,7 +54,7 @@
 					</view>
 				</view>
 				</navigator>
-			</view>
+			</view> -->
 			<view class="user-info-list">
 				<navigator url="/pages/user/assets">
 				<view class="user-info-title">
@@ -75,7 +75,7 @@
 			<view class="user-info-list" @click.stop="toBlindBox" v-if="onSaleGameBoxCount > 0">
 				<image class="wp100" src="../../static/img/images/blind-banner.png" mode="widthFix"></image>
 			</view>
-			<view class="user-info-list">
+			<!-- <view class="user-info-list">
 				<view class="user-info-title" @tap="toAuctionGoods()">
 					<view class="dflex ac">
 						<image src="../../static/img/icon/user-info-icon2@2x.png" mode="" class="m-icon mr20"></image>
@@ -88,25 +88,21 @@
 						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{lots.paipaiAll}}</view>
 						<view class="fs-24 lh-34 fc-939">全部</view>
 					</view>
-					<view class="flex-center fdc" @tap="toAuctionGoods('?lotType=1')">
-						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{lots.paipaiSale}}</view>
-						<view class="fs-24 lh-34 fc-939">已拍下</view>
-					</view>
 					<view class="flex-center fdc" @tap="toAuctionGoods('?lotType=2')">
+						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{lots.paipaiSale}}</view>
+						<view class="fs-24 lh-34 fc-939">已上架</view>
+					</view>
+					<view class="flex-center fdc" @tap="toAuctionGoods('?lotType=1')">
 						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{lots.paipaiHangup}}</view>
-						<view class="fs-24 lh-34 fc-939">转拍中</view>
+						<view class="fs-24 lh-34 fc-939">未上架</view>
 					</view>
-					<view class="flex-center fdc" @tap="toAuctionGoods('?lotType=3')">
+					<view class="flex-center fdc" @tap="toAuctionGoods('?lotType=4')">
 						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{lots.paipaiTake}}</view>
-						<view class="fs-24 lh-34 fc-939">留下自用</view>
+						<view class="fs-24 lh-34 fc-939">已售出</view>
 					</view>
-					<!-- <view class="flex-center fdc" @tap="toAuctionGoods('2')">
-						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{lots.sale}}</view>
-						<view class="fs-24 lh-34 fc-939">已拍出</view>
-					</view> -->
 				</view>
-			</view>
-			<view class="user-info-list">
+			</view> -->
+			<!-- <view class="user-info-list">
 				<view class="user-info-title" @tap="toPpRecords()">
 					<view class="dflex ac">
 						<image src="../../static/img/icon/user-info-icon5@2x.png" mode="" class="m-icon mr20"></image>
@@ -128,8 +124,8 @@
 						<view class="fs-24 lh-34 fc-939">已流拍</view>
 					</view>
 				</view>
-			</view>
-			<view class="user-info-list" v-if="exchangeApplyStatistics.enable">
+			</view> -->
+			<!-- <view class="user-info-list" v-if="exchangeApplyStatistics.enable">
 				<view class="user-info-title" @tap="toPpSubstitution()">
 					<view class="dflex ac">
 						<image src="../../static/img/icon/user-info-icon5@2x.png" mode="" class="m-icon mr20"></image>
@@ -155,7 +151,7 @@
 						<view class="fs-24 lh-34 fc-939">可置换</view>
 					</view>
 				</view>
-			</view>
+			</view> -->
 			<view class="user-info-list" v-if="waitDealBalanceShareShow">
 				<navigator url="/pages/user/assets">
 				<view class="user-info-title">
@@ -190,32 +186,19 @@
 				</view>
 				</navigator>
 			</view>
-			<view class="user-info-list">
+			<!-- <view class="user-info-list">
 				<view class="user-info-title">
 					<view class="dflex ac">
 						<image src="/static/img/icon/user-info-icon4@2x.png" mode="" class="m-icon mr20"></image>
 						<text class="fs-32 lh-32 fc-303 fw-b">能量值</text>
 					</view>
-					<!-- <image src="/static/img/icon/more-icon.png" mode="" class="m-icon"></image> -->
 				</view>
 				<view class="user-info-data">
 					<view class="flex-center fdc">
 						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{score.shopBonusMoney}}</view>
 					</view>
-				<!-- 	<view class="flex-center fdc">
-						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{score.userScore}}</view>
-						<view class="fs-24 lh-34 fc-939">积分</view>
-					</view> -->
-				<!-- 	<view class="flex-center fdc">
-						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{score.recUserScore}}</view>
-						<view class="fs-24 lh-34 fc-939">累计直推积分</view>
-					</view>
-					<view class="flex-center fdc">
-						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{score.secondRecUserScore}}</view>
-						<view class="fs-24 lh-34 fc-939">累计间推积分</view>
-					</view> -->
 				</view>
-			</view>
+			</view> -->
 			<view class="user-info-list user-info-data pt24 pb24">
 				<navigator url="/pages/user/address">
 				<view class="flex-center fdc">
@@ -235,12 +218,12 @@
 					<view class="fs-24 lh-34 fc-303">收藏</view>
 				</view>
 				</navigator>
-				<navigator url="/pages/user/blindbox/couponcenter">
+				<!-- <navigator url="/pages/user/blindbox/couponcenter">
 				<view class="flex-center fdc">
 					<image src="/static/img/icon/user-index-icon4@2x.png" mode="" class="m-icon mb16"></image>
 					<view class="fs-24 lh-34 fc-303">卡券中心</view>
 				</view>
-				</navigator>
+				</navigator> -->
 			</view>
 			<!-- tabbar 占位 -->
 			<view style="height: (50px + env(safe-area-inset-bottom) / 2);min-height: 100rpx;"></view>
