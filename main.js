@@ -1,15 +1,6 @@
 import Vue from 'vue'
 import App from './App'
 
-import index from './pages/index/main.vue'
-Vue.component('index',index)
-
-import goods from './pages/goods/list.vue'
-Vue.component('goods',goods)
-
-import auction from './pages/auction/index.vue'
-Vue.component('auction',auction)
-
 import order from './pages/order/order.vue'
 Vue.component('order',order)
 
@@ -33,6 +24,8 @@ uni.$api = require('./js/service/api')
 uni.$auth = require('./js/session/auth')
 uni.$utils = require('./js/utils')
 uni.$index = require('./js/config/index.js')
+//静态文件路径
+Vue.prototype.domainStatic = uni.$config.DOMAIN_STATIC;
 import * as formats from './js/utils/format.js'
 Object.keys(formats).forEach(key => {
     Vue.filter(key, formats[key])

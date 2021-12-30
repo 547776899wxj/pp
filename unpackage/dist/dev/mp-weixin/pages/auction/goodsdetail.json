@@ -1,6 +1,6 @@
 {
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "详情",
+  "enablePullDownRefresh": false,
   "usingComponents": {
     "customer": "/pages/component/customer"
   }

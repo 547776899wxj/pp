@@ -1,1 +1,0 @@
-<view><cu-custom class="solid-bottom" vue-id="0ab2b778-1" bgColor="bg-f6" isBack="{{true}}" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">关于我们</view></cu-custom><view class="container _div"><rich-text nodes="{{shopInfo.shopAbout}}"></rich-text></view></view>

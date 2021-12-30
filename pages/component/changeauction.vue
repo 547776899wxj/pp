@@ -56,7 +56,8 @@
 		},
 		data() {
 			return {
-				alert:false
+				alert:false,
+				domainStatic:this.domainStatic
 			}
 		},
 		watch:{

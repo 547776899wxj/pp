@@ -1,1 +1,0 @@
-<block wx:if="{{pageCount>1&&pageCount<=pageNumber}}"><view class="no-more"><view class="fs-24 lh-34 fc-939">没有更多啦~</view></view></block>

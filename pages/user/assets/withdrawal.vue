@@ -10,12 +10,12 @@
 			<view class="bank-box flex-between ac mb32">
 				<view class="">
 					<view class="bank-info dflex ac mb6">
-						<!-- <image src="../../../static/img/icon/jh-icon@2x.png" mode="" class="bank-icon fs-0 mr32"></image> -->
+						
 						<view class="bank-card-info text-hidden">{{info.cardBankName}}（{{info.cardNo}}）</view>
 					</view>
 					<!-- <view class="fs-24 lh-34 fc-939 ml92">预计两天内到账</view> -->
 				</view>
-				<!-- <image src="../../../static/img/icon/more-icon.png" class="m-icon" mode=""></image> -->
+				
 			</view>
 			<view class="fs-28 lh-28 fc-303 mb20">提现金额</view>
 			<view class="form-group">

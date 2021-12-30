@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image src="../../static/img/bg/bonus-bg@2x.png" class="wp100 bonus-bg" mode="widthFix"></image>
+		<image :src="domainStatic+'/img/bg/bonus-bg@2x.png'" class="wp100 bonus-bg" mode="widthFix"></image>
 		<cu-custom bgColor="bg-headunset" :isBack="true">
 			<block slot="backText"></block>
 			<block slot="content">当前奖金池</block>
@@ -15,13 +15,13 @@
 					<view class="dflex ac" v-if="user">
 						<view class="fs-36 lh-44 fc-f fw-b mr6">{{user.userYestodaySort}}</view>
 						<template v-if="user.userYestodaySortUp>0">
-							<image src="../../static/img/icon/arrow@2x.png"
+							<image :src="domainStatic+'/img/icon/arrow@2x.png'"
 							 class="arrow-icon" 
 							 mode="" 
 							 >{{user.userYestodaySortUp}}</image>
 						</template>
 						<template v-if="user.userYestodaySortUp<0">
-							<image src="../../static/img/icon/arrow-down@2x.png"
+							<image :src="domainStatic+'/img/icon/arrow-down@2x.png'"
 							 class="arrow-icon" 
 							 mode="" 
 							 >{{user.userYestodaySortUp}}</image>
@@ -42,34 +42,33 @@
 				</view>
 			</view>
 			<template  v-if="user&&user.userYestodaySort>=rowsMaxLength">
-				<image src="../../static/img/bg/talk-bg@2x.png" class="talk-image" mode=""></image>
+				<image :src="domainStatic+'/img/bg/talk-bg@2x.png'" class="talk-image" mode=""></image>
 				<view class="fs-20 lh-28 fc-ffd pl38 mb38">您的排名不足，请再接再励哦~</view>
 			</template>
 			<view class="rank-top">
 				<view class="rank flex-center fdc" v-if="first">
 					<view class="no1 flex-center mb10">
-						<!-- <image src="../../static/img/example/auction1@2x.png" class="rank-user-image" mode=""></image> -->
 						<image :src="first.userPhoto" class="rank-user-image" mode=""></image>
-						<image src="../../static/img/icon/no.1@2x.png" class="crown" mode=""></image>
+						<image :src="domainStatic+'/img/icon/no.1@2x.png'" class="crown" mode=""></image>
 					</view>
 					<view class="fs-24 fc-f lh-34 tc">{{first.userCertName || first.mobile}}</view>
 				</view>
-				<view class="rank2 flex-center fdc"v-if="second">
+				<view class="rank2 flex-center fdc" v-if="second">
 					<view class="no2 no2-address flex-center mb10">
 						<image :src="first.userPhoto"  class="rank-user-image" mode=""></image>
-						<image src="../../static/img/icon/no.1@2x.png" class="crown" mode=""></image>
+						<image :src="domainStatic+'/img/icon/no.1@2x.png'" class="crown" mode=""></image>
 					</view>
 					<view class="fs-24 fc-f lh-34 tc">{{second.userCertName || second.mobile}}</view>
 				</view>
 				<view class="rank3 flex-center fdc" v-if="third">
 					<view class="no3 no3-address flex-center mb10">
 						<image :src="first.userPhoto"  class="rank-user-image" mode=""></image>
-						<image src="../../static/img/icon/no.1@2x.png" class="crown" mode=""></image>
+						<image :src="domainStatic+'/img/icon/no.1@2x.png'" class="crown" mode=""></image>
 					</view>
 					<view class="fs-24 fc-f lh-34 tc">{{third.userCertName || third.mobile}}</view>
 				</view>
 				<view class="stage">
-					<image src="../../static/img/bg/stage-bg@2x.png" class="wp100 hp100" mode=""></image>
+					<image :src="domainStatic+'/img/bg/stage-bg@2x.png'" class="wp100 hp100" mode=""></image>
 				</view>
 				<view class="first-ranking flex-center fdc">
 					<view class="fs-24 lh-34 fc-f op75 mb8">第一名</view>
@@ -94,7 +93,7 @@
 				</view>
 			</view>
 			<view class="rank-box" v-if="rows.length > 0">
-				<view class="rank-list flex-between ac" v-for="(item,index) in rows">
+				<view class="rank-list flex-between ac" v-for="(item,index) in rows" :key='index'>
 					<view class="dflex ac">
 						<view class="fs-28 fc-606 lh-34 mr32">{{(index +3) | formatNumber}}</view>
 						<image :src="first.userPhoto"  class="ranking-head mr16" mode=""></image>
@@ -121,7 +120,8 @@
 				second: '',
 				third: '',
 				rowsMaxLength:0,
-				topSum:0
+				topSum:0,
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad() {

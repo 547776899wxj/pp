@@ -14,18 +14,18 @@
 				<view>
 					<view class="list-item" @click="toServiceInfo(1)">
 						<text>常见问题</text>
-						<image src="../../../static/img/icon/gd@3x.png"></image>
+						<image :src="domainStatic+'/img/icon/gd@3x.png'"></image>
 					</view>
 				</view>
 			</view>
 		    <view class="service-list">
 		      <view class="list-item other-list" @click="toServiceInfo(2)">
 		        <text>关于我们</text>
-		        <image src="../../../static/img/icon/gd@3x.png"></image>
+		        <image :src="domainStatic+'/img/icon/gd@3x.png'"></image>
 		      </view>
 		      <view class="list-item other-list" @click="toServiceInfo(3)">
 		        <text>意见反馈</text>
-		        <image src="../../../static/img/icon/gd@3x.png"></image>
+		        <image :src="domainStatic+'/img/icon/gd@3x.png'"></image>
 		      </view>
 			  <view class="list-item other-list flex-between pr60" v-if="versionName != ''">
 			    <text>版本号</text>
@@ -36,7 +36,7 @@
 		      <view class="phone-kefu" data-reply-phone="4006299996" @click.stop="showCustomer()">
 		        <button>
 		          <view>
-		            <image src="../../../static/img/icon/dianhua-kefu@3x.png"></image>
+		            <image :src="domainStatic+'/img/icon/dianhua-kefu@3x.png'"></image>
 		            <text>电话客服</text>
 		            <text class="time">09:00-21:00</text>
 		          </view>
@@ -45,7 +45,7 @@
 		      <view class="online-kefu" @click.stop="showCustomer()">
 		        <button open-type="contact">
 		          <view>
-		            <image src="../../../static/img/icon/online-kefu@3x.png"></image>
+		            <image :src="domainStatic+'/img/icon/online-kefu@3x.png'"></image>
 		            <text>在线客服</text>
 		            <text class="time">09:00-21:00</text>
 		          </view>
@@ -69,7 +69,8 @@
 		data() {
 			return {
 				customerAlert:false,
-				versionName:""
+				versionName:"",
+				domainStatic:this.domainStatic,
 			}
 		},
 		onShow() {

@@ -11,7 +11,7 @@
 		</view>
 		<view class="container">
 			<view class="flex-center logo-box mb66">
-				<image src="../../static/img/images/logo@2x.png" class="logo"></image>
+				<image :src="domainStatic+'/img/images/logo@2x.png'" class="logo"></image>
 			</view>
 			<view class="form-group">
 				<input placeholder="手机号码" maxlength="11" name="input" placeholder-class="fc-c4cc" v-model="form.userName">
@@ -36,23 +36,25 @@
 				<navigator url="phonelogin" class="fs-28 lh-28 fc-606">手机验证码登录</navigator>
 				<navigator url="forgetPwd" class="fs-28 lh-28 fc-606">忘记密码？</navigator>
 			</view>
-			<view class="other-login" v-if="ckVersion != 1">
-				<view class="other-login-title flex-center mb40">
-					<view class="line"></view>
-					<view class="fs-24 lh-24 fc-606 ml34 mr32">其他登录方式</view>
-					<view class="line"></view>
-				</view>
-				<view class="flex-center">
-					<view @click="wxLogin" class="flex-center fdc mr72" url="phonebindwx">
-						<image src="../../static/img/icon/wx-login@2x.png" class="wx-login-icon mb24"></image>
-						<text>微信一键登录</text>
+			<!-- #ifndef MP-WEIXIN -->
+				<view class="other-login" v-if="ckVersion != 1">
+					<view class="other-login-title flex-center mb40">
+						<view class="line"></view>
+						<view class="fs-24 lh-24 fc-606 ml34 mr32">其他登录方式</view>
+						<view class="line"></view>
 					</view>
-					<view class="flex-center fdc" @click.stop="phoneOneCodeLogin()">
-						<image src="../../static/img/icon/phone-login.png" class="wx-login-icon mb24"></image>
-						<text>本机一键登录</text>
+					<view class="flex-center">
+						<view @click="wxLogin" class="flex-center fdc mr72" url="phonebindwx">
+							<image :src="domainStatic+'/img/icon/wx-login@2x.png'" class="wx-login-icon mb24"></image>
+							<text>微信一键登录</text>
+						</view>
+						<view class="flex-center fdc" @click.stop="phoneOneCodeLogin()">
+							<image :src="domainStatic+'/img/icon/phone-login.png'" class="wx-login-icon mb24"></image>
+							<text>本机一键登录</text>
+						</view>
 					</view>
 				</view>
-			</view>
+			<!-- #endif -->
 		</view>
 	</view>
 </template>
@@ -78,7 +80,8 @@
 					appid:"",
 					appkey:""
 				},//推送信息
-				devType:""//手机类型
+				devType:"",//手机类型
+				domainStatic:this.domainStatic,
 			}
 		},
 		created() {
@@ -266,6 +269,22 @@
 				// 	uni.navigateBack({delta: 1});
 				// }
 			},
+			wxLogin(){
+				uni.login({
+				  provider: 'weixin',
+				  success: loginRes => {
+					uni.$api.getWxOpenToken({code:loginRes.code}).then((res)=>{
+						console.log(res);
+					})
+				  },
+				  fail: res=>{ 
+					uni.showToast({
+						title: '登录失败', 
+						icon:'none'
+					});
+				  }
+				});
+			},
 			onLogin(){
 				let {userName, password, isCheck} = this.form
 				/* if (!isCheck) {
@@ -288,6 +307,9 @@
 					console.log(JSON.stringify(res))
 					uni.$toast.showToast("登录成功！");
 					uni.$auth.loginSuccess(res)
+					// #ifdef MP-WEIXIN
+					this.wxLogin();
+					// #endif
 					setTimeout(()=>{
 						this.onLoginClose()
 					},1000)

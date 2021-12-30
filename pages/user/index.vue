@@ -1,19 +1,15 @@
 <template>
 	<view id="containerId">
-		<image src="/static/img/bg/user-bg@2x.png" class="user-index-bg" mode="widthFix"></image>
+		<image :src="domainStatic+'/img/bg/user-bg@2x.png'" class="user-index-bg" mode="widthFix"></image>
 		<view style="height: 60rpx;"></view>
 		<view class="cu-bar">
 			<view class="action pr">
-				<navigator url="/pages/user/message">
-					<image src="/static/img/icon/message-icon@2x.png" mode="" class="m-icon"></image>
-					<view class="new-message" v-if="notReadMsgNum > 0"></view>
-				</navigator>
 			</view>
-			<view class="action">
+			<!-- <view class="action">
 				<navigator url="/pages/user/set">
-					<image src="/static/img/icon/set-icon@2x.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/set-icon@2x.png'" mode="" class="m-icon"></image>
 				</navigator>
-			</view>
+			</view> -->
 		</view>
 		<view class="user-info flex-between ac">
 			<view class="dflex fdc jc-fs">
@@ -22,47 +18,19 @@
 				</view>
 				<view class="fs-26 lh-32 fc-939">{{user.mobile}}</view>
 			</view>
-			<image class="user-image" :src="user.userPhoto?user.userPhoto:'/static/img/icon/default-user.png'"></image>
+			<navigator url="/pages/user/set">
+				<image class="user-image" :src="user.userPhoto?user.userPhoto: domainStatic+ '/img/icon/default-user.png'"></image>
+			</navigator>
 		</view>
 		<view class="container">
-			<!-- <view class="user-info-list">
-				<view class="user-invite bg-white mb2" v-if="ckVersion != 1">
-					<view class="flex-between ac hp100">
-						<view class="dflex jc-fs fdc">
-							<image class="invite-icon mb12" src="/static/img/icon/user-invite-icon@2x.png"></image>
-							<view class="fs-24 lh-34 fc-f op6">邀请码：{{user.userSpread.userInviteCode}}</view>
-						</view>
-						<view class="invite-btn flex-center fs-26 fc-303" @click="shareUser">我要邀请</view>
-					</view>
-				</view>
-				<navigator url="/pages/user/expand">
-				<view class="user-info-title">
-					<view class="dflex ac">
-						<image src="../../static/img/icon/user-info-icon1@2x.png" mode="" class="m-icon mr20"></image>
-						<text class="fs-32 lh-32 fc-303 fw-b">拓客管理</text>
-					</view>
-					<image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image>
-				</view>
-				<view class="user-info-data">
-					<view class="flex-center fdc">
-						<view class="fs-36 lh-44 fc-303 fw-b mb4">{{user.userCount.recUserCount || 0}}</view>
-						<view class="fs-24 lh-34 fc-939">直推会员</view>
-					</view>
-					<view class="flex-center fdc">
-						<view class="fs-36 lh-44 fc-303 fw-b mb4">{{user.userCount.secondRecUserCount || 0}}</view>
-						<view class="fs-24 lh-34 fc-939">间推会员</view>
-					</view>
-				</view>
-				</navigator>
-			</view> -->
 			<view class="user-info-list">
 				<navigator url="/pages/user/assets">
 				<view class="user-info-title">
 					<view class="dflex ac">
-						<image src="/static/img/icon/user-info-icon3@2x.png" mode="" class="m-icon mr20"></image>
+						<image :src="domainStatic+'/img/icon/user-info-icon3@2x.png'" mode="" class="m-icon mr20"></image>
 						<text class="fs-32 lh-32 fc-303 fw-b">资产(￥)</text>
 					</view>
-					<image src="/static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/more-icon.png'" mode="" class="m-icon"></image>
 				</view>
 				<view class="user-info-data">
 					<view class="flex-center fdc" v-for="(item,index) in money" :key="index">
@@ -73,15 +41,15 @@
 				</navigator>
 			</view>
 			<view class="user-info-list" @click.stop="toBlindBox" v-if="onSaleGameBoxCount > 0">
-				<image class="wp100" src="../../static/img/images/blind-banner.png" mode="widthFix"></image>
+				<image class="wp100" :src="domainStatic+'/img/images/blind-banner.png'" mode="widthFix"></image>
 			</view>
 			<!-- <view class="user-info-list">
 				<view class="user-info-title" @tap="toAuctionGoods()">
 					<view class="dflex ac">
-						<image src="../../static/img/icon/user-info-icon2@2x.png" mode="" class="m-icon mr20"></image>
+						<image :src="domainStatic+'/img/icon/user-info-icon2@2x.png'" mode="" class="m-icon mr20"></image>
 						<text class="fs-32 lh-32 fc-303 fw-b">我的拍品</text>
 					</view>
-					<image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+/img/icon/more-icon.png" mode="" class="m-icon"></image>
 				</view>
 				<view class="user-info-data">
 					<view class="flex-center fdc" @tap="toAuctionGoods()">
@@ -105,10 +73,10 @@
 			<!-- <view class="user-info-list">
 				<view class="user-info-title" @tap="toPpRecords()">
 					<view class="dflex ac">
-						<image src="../../static/img/icon/user-info-icon5@2x.png" mode="" class="m-icon mr20"></image>
+						<image :src="domainStatic+'/img/icon/user-info-icon5@2x.png'" mode="" class="m-icon mr20"></image>
 						<text class="fs-32 lh-32 fc-303 fw-b">拍品拍卖记录</text>
 					</view>
-					<image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/more-icon.png'" mode="" class="m-icon"></image>
 				</view>
 				<view class="user-info-data">
 					<view class="flex-center fdc" @tap="toPpRecords('?auctionLotHangupStatus=2')">
@@ -128,10 +96,10 @@
 			<!-- <view class="user-info-list" v-if="exchangeApplyStatistics.enable">
 				<view class="user-info-title" @tap="toPpSubstitution()">
 					<view class="dflex ac">
-						<image src="../../static/img/icon/user-info-icon5@2x.png" mode="" class="m-icon mr20"></image>
+						<image :src="domainStatic+'/img/icon/user-info-icon5@2x.png'" mode="" class="m-icon mr20"></image>
 						<text class="fs-32 lh-32 fc-303 fw-b">拍品置换管理</text>
 					</view>
-					<image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/more-icon.png'" mode="" class="m-icon"></image>
 				</view>
 				<view class="user-info-data">
 					<view class="flex-center fdc" @tap="toPpSubstitution()">
@@ -156,10 +124,10 @@
 				<navigator url="/pages/user/assets">
 				<view class="user-info-title">
 					<view class="dflex ac">
-						<image src="/static/img/icon/user-info-icon6@2x.png" mode="" class="m-icon mr20"></image>
+						<image :src="domainStatic+'/img/icon/user-info-icon6@2x.png'" mode="" class="m-icon mr20"></image>
 						<text class="fs-32 lh-32 fc-303 fw-b">{{waitDealBalanceShareTitle}}</text>
 					</view>
-					<image src="/static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/more-icon.png'" mode="" class="m-icon"></image>
 				</view>
 				<view class="user-info-data">
 					<view class="flex-center fdc" v-for="(value,name) in waitDealBalanceShare" :key="name">
@@ -173,10 +141,10 @@
 				<navigator url="/pages/user/cooperauction">
 				<view class="user-info-title">
 					<view class="dflex ac">
-						<image src="/static/img/icon/user-info-icon6@2x.png" mode="" class="m-icon mr20"></image>
+						<image :src="domainStatic+'/img/icon/user-info-icon6@2x.png'" mode="" class="m-icon mr20"></image>
 						<text class="fs-32 lh-32 fc-303 fw-b">{{balanceShareTitle}}</text>
 					</view>
-					<image src="/static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/more-icon.png'" mode="" class="m-icon"></image>
 				</view>
 				<view class="user-info-data">
 					<view class="flex-center fdc" v-for="(value,name) in balanceShare" :key="name">
@@ -186,55 +154,40 @@
 				</view>
 				</navigator>
 			</view>
-			<!-- <view class="user-info-list">
-				<view class="user-info-title">
-					<view class="dflex ac">
-						<image src="/static/img/icon/user-info-icon4@2x.png" mode="" class="m-icon mr20"></image>
-						<text class="fs-32 lh-32 fc-303 fw-b">能量值</text>
-					</view>
-				</view>
-				<view class="user-info-data">
-					<view class="flex-center fdc">
-						<view class="fs-36 lh-44 fc-303 fw-b mb8">{{score.shopBonusMoney}}</view>
-					</view>
-				</view>
-			</view> -->
 			<view class="user-info-list user-info-data pt24 pb24">
 				<navigator url="/pages/user/address">
 				<view class="flex-center fdc">
-					<image src="/static/img/icon/user-index-icon1@2x.png" mode="" class="m-icon mb16"></image>
+					<image :src="domainStatic+'/img/icon/user-index-icon1@2x.png'" mode="" class="m-icon mb16"></image>
 					<view class="fs-24 lh-34 fc-303">收货地址</view>
 				</view>
 				</navigator>
 				<navigator url="/pages/info/servicecenter/servicecenter">
 				<view class="flex-center fdc">
-					<image src="/static/img/icon/user-index-icon2@2x.png" mode="" class="m-icon mb16"></image>
+					<image :src="domainStatic+'/img/icon/user-index-icon2@2x.png'" mode="" class="m-icon mb16"></image>
 					<view class="fs-24 lh-34 fc-303">服务中心</view>
 				</view>
 				</navigator>
 				<navigator url="/pages/user/collection">
-				<view class="flex-center fdc">
-					<image src="/static/img/icon/user-index-icon5@2x.png" mode="" class="m-icon mb16"></image>
-					<view class="fs-24 lh-34 fc-303">收藏</view>
-				</view>
+					<view class="flex-center fdc">
+						<image :src="domainStatic+'/img/icon/user-index-icon5@2x.png'" mode="" class="m-icon mb16"></image>
+						<view class="fs-24 lh-34 fc-303">拍品收藏</view>
+					</view>
 				</navigator>
-				<!-- <navigator url="/pages/user/blindbox/couponcenter">
-				<view class="flex-center fdc">
-					<image src="/static/img/icon/user-index-icon4@2x.png" mode="" class="m-icon mb16"></image>
-					<view class="fs-24 lh-34 fc-303">卡券中心</view>
-				</view>
-				</navigator> -->
+				<navigator url="/pages/user/set">
+					<view class="flex-center fdc">
+						<image :src="domainStatic+'/img/icon/set-icon@2x.png'" mode="" class="m-icon mb16"></image>
+						<view class="fs-24 lh-34 fc-303">用户设置</view>
+					</view>
+				</navigator>
 			</view>
 			<!-- tabbar 占位 -->
 			<view style="height: (50px + env(safe-area-inset-bottom) / 2);min-height: 100rpx;"></view>
 		</view>
-		<!-- <tabbar></tabbar> -->
+		
 	</view>
 </template>
 
 <script>
-	import tabbar from 'pages/component/tabbar.vue';
-	
 	export default {
 		data() {
 			return {
@@ -260,7 +213,8 @@
 				waitDealBalanceShare:{},
 				waitDealBalanceShareTitle: '',
 				waitDealBalanceShareShow: 0,
-				notReadMsgNum:0
+				notReadMsgNum:0,
+				domainStatic:this.domainStatic,
 			}
 		},
 		mounted: function () {
@@ -343,7 +297,7 @@
 					href:shareUrl,
 					summary:desc || '',
 					scene:"WXSceneSession",//场景值 WXSceneSession 聊天界面 WXSenceTimeline 分享到朋友圈 WXSceneFavorite 分享到微信收藏
-					imageUrl:"/static/logo.png",
+					imageUrl:"https://pp.hoshiibuy.com/static/logo.png",
 					success (res) {
 						console.log("分享成功:"+JSON.stringify(res))
 					},
@@ -362,7 +316,18 @@
 	}
 </script>
 
-<style>
+<style scoped>
+/* #ifdef MP-WEIXIN */
+.cu-bar {
+	box-shadow: none;
+	top: 130rpx;
+	bottom: auto;
+}
+.user-info{
+	padding-top: 70rpx !important;
+	height: 230rpx;
+}
+/* #endif */
 .new-message {
 	width: 16rpx;
 	height: 16rpx;
@@ -407,7 +372,7 @@
 	width: 100%;
 	height: 120rpx;
 	padding: 0 44rpx;
-	background: url(../../static/img/bg/user-invite-bg@2x.png) no-repeat;
+	background: url(https://pp.hoshiibuy.com/static/img/bg/user-invite-bg@2x.png) no-repeat;
 	background-size: 100% 100%;
 }
 .invite-icon {

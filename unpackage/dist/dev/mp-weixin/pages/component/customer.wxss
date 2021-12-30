@@ -4,8 +4,7 @@
 	border: 1px solid #DDDDE6;
 }
 .remark-modal .cu-dialog {
-	-webkit-border-radius: 24rpx;
-	        border-radius: 24rpx;
+	border-radius: 24rpx;
 	width: 650rpx;
 }
 .gzh-pic {

@@ -8,7 +8,7 @@
 				<view v-for="item in helpList" @click="toHelpInfo(item.helpId)">
 					<view class="list-item flex-between ac">
 						<text>{{item.helpTitle}}</text>
-						<image src="../../../../static/img/icon/arrow@3x.png" mode=""></image>
+						<image :src="domainStatic+'/img/icon/arrow@3x.png'" mode=""></image>
 					</view>
 				</view>
 			</view>
@@ -20,7 +20,8 @@
 	export default {
 		data() {
 			return {
-				helpList:[]
+				helpList:[],
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad() {

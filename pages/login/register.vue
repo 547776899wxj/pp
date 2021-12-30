@@ -52,6 +52,7 @@
 					isCheck:false
 				},
 				modalName: null,
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad(e) { 

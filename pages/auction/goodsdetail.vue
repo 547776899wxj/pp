@@ -2,7 +2,7 @@
 	<view class="goods-detail">
 		<view class="cu-bar search">
 			<view class="action">
-				<image @click="back()" src="../../static/img/icon/goods-back@2x.png" mode="" class="m-icon"></image>
+				<image @click="back()" :src="domainStatic+'/img/icon/goods-back@2x.png'" mode="" class="m-icon"></image>
 			</view>
 		</view>
 		<view class="pr">
@@ -99,14 +99,14 @@
 		<view style="height: (50px + env(safe-area-inset-bottom) / 2);min-height: 100rpx;"></view>
 		<view class="cu-bar bg-white border shop">
 			<button class="action" @tap="customerAlert=true">
-				<image class="m-icon" src="../../static/img/icon/user-index-icon4@2x.png"></image> 客服
+				<image class="m-icon" :src="domainStatic+'/img/icon/user-index-icon4@2x.png'"></image> 客服
 			</button>
 			<view class="action" @click="followLot">
 				<view v-if="isFollowLot" class="dflex fdc ac">
-					<image  src="../../static/img/icon/collection@2x.png" mode="" class="m-icon"></image>已关注 
+					<image  :src="domainStatic+'/img/icon/collection@2x.png'" mode="" class="m-icon"></image>已关注 
 				</view>
 				<view v-else class="dflex fdc ac">
-					<image src="../../static/img/icon/collect@2x.png" mode="" class="m-icon"></image> 关注
+					<image :src="domainStatic+'/img/icon/collect@2x.png'" mode="" class="m-icon"></image> 关注
 				</view>
 			</view>
 			<view class="btn-group">
@@ -145,7 +145,8 @@
 				current:1,
 				videoShow:true,
 				goodsTabCur:0,
-				goodsTab:[]
+				goodsTab:[],
+				domainStatic:this.domainStatic
 			}
 		},
 		onLoad (e) {
@@ -339,7 +340,13 @@
 	}
 </script>
 
-<style>
+<style scoped>
+	/* #ifdef MP-WEIXIN */
+	.cu-bar{
+		bottom:auto;
+		box-shadow: none ;
+	}
+	/* #endif */
 .cu-bar.search {
 	position: fixed;
 	top: 40rpx;
@@ -366,7 +373,7 @@ swiper {
 .auction-goods-time {
 	width: 100%;
 	height: 136rpx;
-	background: url(../../static/img/bg/auction-goods-time@2x.png) no-repeat;
+	background: url(https://pp.hoshiibuy.com/static/img/bg/auction-goods-time@2x.png) no-repeat;
 	background-size: 100% 100%;
 	padding-left: 32rpx;
 	padding-right: 40rpx;

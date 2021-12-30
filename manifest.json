@@ -144,10 +144,10 @@
     /* 快应用特有相关 */
     "mp-weixin" : {
         /* 小程序特有相关 */
-        "appid" : "wxee9ca1ab1b5cba4b",
+        "appid" : "wx0b054d4d9bf41857",
         "setting" : {
-            "urlCheck" : false,
-            "es6" : true,
+            "urlCheck" : true,
+            "es6" : false,
             "minified" : true
         }
     },
@@ -158,9 +158,8 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/rest" : {
-                    // "target" : "https://apppp.citytp.com",
                     // "target" : "http://192.168.0.149:8202",
-                    "target" : "http://120.55.15.192:8202",
+                    "target" : "http://pp.hoshiibuy.com",
                     "changeOrigin" : true,
                     "pathRewrite" : {
                         "^/rest" : ""

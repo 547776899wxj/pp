@@ -7,22 +7,28 @@ var domain; // 第三方设置
 
 const extConfig = {};
 
-// domain = 'https://apppp.citytp.com';
-domain = 'http://120.55.15.192:8202'
+
+domain = 'https://pp.hoshiibuy.com'
 // domain = 'http://192.168.0.145:8202';
 // #ifdef H5
 	domain = '/rest'; 
+// #endif
+
+// #ifdef MP-WEIXIN
+	domain = 'https://pp.hoshiibuy.com';
 // #endif
 /* QQ地图KEY */
 
 export const QQ_MAP_WX_KEY = 'TJIBZ-CTY3W-G5ERW-OCRQK-UWUGV-FZBAZ';
 
 export const DOMAIN = domain;
+// 静态文件路径
+export const DOMAIN_STATIC = 'https://pp.hoshiibuy.com/static';
 
 export const LOGIN_PAGE = '/pages/login/login';
 /*首页页面地址*/
 
-export const INDEX_PAGE = '/pages/index/index';
+export const INDEX_PAGE = '/pages/auction/specialsshow';
 /*跳转登录页面 时间间隔 毫秒*/
 
 export const NAVI_LOGIN_PAGE_TIME_SPACE = 500;

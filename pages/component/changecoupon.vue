@@ -77,6 +77,7 @@
 				topCouponCount:0,
 				priorityCouponCount:0,
 				couponType:'',
+				domainStatic:this.domainStatic
 			}
 		},
 		created() {

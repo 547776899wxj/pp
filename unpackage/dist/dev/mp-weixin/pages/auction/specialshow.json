@@ -1,8 +1,7 @@
 {
   "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
+  "enablePullDownRefresh": true,
   "usingComponents": {
-    "page-pagination": "/uni_modules/page-pagination/components/page-pagination/page-pagination",
     "listempty": "/pages/component/listempty",
     "nomore": "/pages/component/nomore",
     "easy-loadimage": "/components/easy-loadimage/easy-loadimage"

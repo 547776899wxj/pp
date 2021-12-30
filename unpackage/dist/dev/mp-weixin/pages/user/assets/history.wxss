@@ -27,8 +27,7 @@
 }
 .history-list {
 	padding: 24rpx 20rpx;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	background-color: #fff;
 }
 

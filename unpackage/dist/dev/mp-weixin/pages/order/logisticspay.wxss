@@ -1,7 +1,6 @@
 
 .cu-modal.bottom-modal.address-modal .cu-dialog {
-	-webkit-border-radius: 40rpx 40rpx 0 0;
-	        border-radius: 40rpx 40rpx 0 0;
+	border-radius: 40rpx 40rpx 0 0;
 	max-height: 1000rpx;
 }
 .cu-modal.bottom-modal.address-modal .cu-dialog .padding-sm {
@@ -12,8 +11,7 @@
 }
 .address-box {
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	overflow: hidden;
 	/* box-shadow: 0px 12rpx 7px rgba(196,167,123,0.2); */
 	/* box-shadow:0px 0rpx 8rpx 0px rgba(49,47,40,0.3); */
@@ -23,8 +21,7 @@
 .address-icon {
 	width: 64rpx;
 	height: 74rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	flex-shrink: 0;
 }
 .address-operation {
 	height: 64rpx;
@@ -41,8 +38,7 @@
 	width: 100%;
 	min-height: 100rpx;
 	padding-bottom: env(safe-area-inset-bottom);
-	-webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
-	        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
 }
 .submit-box .cu-btn {
 	width: 240rpx;
@@ -69,8 +65,7 @@ page {
 }
 .address-box {
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	overflow: hidden;
 }
 .logistics-tips {
@@ -83,8 +78,7 @@ page {
 .address-icon {
 	width: 64rpx;
 	height: 74rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	flex-shrink: 0;
 }
 .container {
 	padding: 8rpx 20rpx;
@@ -93,24 +87,17 @@ page {
 	padding: 0 0 20rpx;
 }
 .goods-info {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: start;
-	-webkit-align-items: flex-start;
-	        align-items: flex-start;
+	align-items: flex-start;
 	padding: 20rpx;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	background-color: #fff;
 }
 .goods-image {
 	width: 180rpx;
 	height: 180rpx;
-	-webkit-border-radius: 12rpx;
-	        border-radius: 12rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	border-radius: 12rpx;
+	flex-shrink: 0;
 	margin-right: 20rpx;
 }
 .goods-msg {
@@ -128,8 +115,7 @@ page {
 }
 .pay-way {
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	padding: 0 24rpx 0 20rpx;
 }
 .pay-way>view {
@@ -165,8 +151,7 @@ page {
 	width: 100%;
 	height: 90rpx;
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	padding: 0 20rpx;
 	margin-top: 20rpx;
 }
@@ -174,5 +159,22 @@ page {
 	width: 30rpx;
 	height: 30rpx;
 }
-
+/* 支付弹窗 */
+.cu-modal .cu-dialog {
+	width: 600rpx;
+}
+.wait-pay {
+	width: 414rpx;
+	margin: 0 auto;
+}
+.wait-pay-box .cu-btn {
+	width: 240rpx;
+	height: 80rpx;
+	margin: 0;
+	border-radius: 40rpx;
+}
+.wait-pay-box .cu-btn[class*="line"]::after {
+	display: none;
+	border: 0;
+}
 

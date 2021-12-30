@@ -3,7 +3,9 @@
 		<cu-custom bgColor="bg-156" rightUrl="./assets/balance" pageClassR="fc-f op75 pr32" :isBack="true">
 			<block slot="backText"></block>
 			<block slot="content">资产</block>
-			<block slot="right">余额明细</block>
+			<!-- #ifndef MP-WEIXIN -->
+				<block slot="right">余额明细</block>
+			<!-- #endif -->
 		</cu-custom>
 		<view class="color-bg"></view>
 		<view class="container">
@@ -19,69 +21,27 @@
 				</view>
 				<view class="pr mt48 mb48">
 				</view>
-				<view class="flex-between ac wp100 mb20">
-					<navigator class="operation-btn shallow flex-center fc-f" url="../login/bankcard">
+				<view class="dflex ac wp100 mb20">
+					<navigator class="operation-btn shallow flex-center fc-f mr20" url="../login/bankcard">
 						绑定银行卡
 					</navigator>
-					<navigator class="operation-btn shallow flex-center fc-f" url="assets/withdrawal">
+					<navigator class="operation-btn shallow flex-center fc-f mr20" url="assets/withdrawal">
 						提现
 					</navigator>
-					<navigator class="operation-btn flex-center fc-146" url="assets/recharge">
-						保障金充值
+					<navigator class="operation-btn shallow flex-center fc-f" url="assets/recharge">
+						余额充值
 					</navigator>
 				</view>
-				<view class="dflex ac jc-fs wp100 mb12" v-if="noteList.length">
-					<image src="../../static/img/icon/profit-icon2@2x.png" mode="" class="m-icon"></image>
-					<view class="fs-28 lh-28 fc-f">合拍共享记录(￥{{noteSum}})</view>
-				</view>
-				<view class="toker-box wp100 pl28 pr28 mb20" v-for="item in noteList">
-					<view class="toker-info dflex ac">
-						<image :src="item.userPhoto || '/static/img/icon/default-user.png'" mode="" class="toker-head"></image>
-						<view class="dflex fdc ai-fs flex-1">
-							<view class="fs-28 lh-28 fc-3 mb10">{{item.userCertName}}（{{item.mobile}}）</view>
-							<view class="fs-24 lh-24 fc-9 mb16">共享时间 {{item.balanceShareNoteAddTime}}</view>
-							<view class="flex-between ai-fe wp100">
-								<view class="fs-20 lh-20 fc-9">合拍收益：{{item.balanceShareNoteProfitMoney}}</view>
-								<view class="dflex ai-fe">
-									<view class="fs-24 lh-24 fc-9 mr10">共享金额</view>
-									<view class="fs-32 lh-24 fc-fb2">￥{{item.money}}</view>
-								</view>
-							</view>
-						</view>
+				<!-- #ifdef MP-WEIXIN -->
+					<view class="flex  wp100 mb20">
+						<navigator class="operation-btn shallow flex-center fc-f" url="./assets/balance">
+							余额明细
+						</navigator>
 					</view>
-					<view class="toker-btn-box dflex jc-end">
-						<view class="toker-btn flex-center fs-28 lh-28 fc-d52" @click="handleCancelShare(item.balanceShareNoteId)">取消共享</view>
-					</view>
-				</view>
-				<view class="cooper-box mb20">
-					<view class="dflex ac jc-fs cooper-title" v-if="reqList.length">
-						<image src="../../static/img/icon/profit-icon@2x.png" mode="" class="m-icon"></image>
-						<view class="fs-28 lh-28 fc-303">请求合拍共享金额(￥{{reqSum}})</view>
-					</view>
-					<view class="toker-box mt32" v-for="item in reqList">
-						<view class="toker-info dflex ac">
-							<image :src="item.userPhoto || '/static/img/icon/default-user.png'" mode="" class="toker-head"></image>
-							<view class="dflex fdc ai-fs flex-1">
-								<view class="fs-28 lh-28 fc-3 mb10">{{item.userCertName}}（{{item.mobile}}）</view>
-								<view class="fs-24 lh-24 fc-9 mb16">请求共享时间 {{item.balanceShareAddTime}}</view>
-								<view class="flex-between ai-fe wp100">
-									<view class="fs-20 lh-20 fc-9">合拍收益：{{item.balanceShareProfitMoney}}</view>
-									<view class="dflex ai-fe">
-										<view class="fs-24 lh-24 fc-9 mr10">共享金额</view>
-										<view class="fs-32 lh-24 fc-fb2">￥{{item.money}}</view>
-									</view>
-								</view>
-							</view>
-						</view>
-						<view class="toker-btn-box dflex jc-end">
-							<view class="refuse-btn flex-center fs-28 lh-28 fc-9 mr20" @click="handleRefuse(item.balanceShareId)">拒绝</view>
-							<view class="agree-btn flex-center fs-28 lh-28 fc-d52" @click="handleAgree(item.balanceShareId)">同意</view>
-						</view>
-					</view>
-				</view>
-				<view class="profit-box">
+				<!-- #endif -->
+				<!-- <view class="profit-box">
 					<view class="pl40 dflex ac mb32">
-						<image src="../../static/img/icon/profit-icon@2x.png" mode="" class="m-icon"></image>
+						<image :src="domainStatic+'/img/icon/profit-icon@2x.png'" mode="" class="m-icon"></image>
 						<view class="fs-32 lh-44 fc-303 fw-b">收入统计(￥)</view>
 					</view>
 					<view class="flex-between ac mb40">
@@ -110,10 +70,10 @@
 							<view class="fs-24 lh-34 fc-939">累计合拍收益</view>
 						</view>
 					</view>
-				</view>
+				</view> -->
 				<view class="profit-box mt20">
 					<view class="pl40 dflex ac mb32">
-						<image src="../../static/img/icon/profit-icon@2x.png" mode="" class="m-icon"></image>
+						<image :src="domainStatic+'/img/icon/profit-icon@2x.png'" mode="" class="m-icon"></image>
 						<view class="fs-32 lh-44 fc-303 fw-b">其他统计(￥)</view>
 					</view>
 					<view class="flex-between ac mb40">

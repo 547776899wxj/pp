@@ -13,11 +13,9 @@ page {
 	font-size: 30rpx;
 }
 .border-btn {
-	-webkit-border-radius: 45rpx;
-	        border-radius: 45rpx;
+	border-radius: 45rpx;
 }
 .bg-pp {
-	background: -webkit-linear-gradient(323deg, #E93A37 0%, #FF6346 100%);
 	background: linear-gradient(127deg, #E93A37 0%, #FF6346 100%);
 }
 .cu-btn.lg {

@@ -12,41 +12,9 @@
 		        "enablePullDownRefresh": true
 		    }
 		    
-		},
-		{
-			"path": "pages/index/main",
-			"style": {
-				"app-plus":{
-					"bounce":"none"
-				}
-			}
-		},
-		{
-            "path" : "pages/index/index",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
+		}
         ,{
             "path" : "pages/login/agreement/agreement",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/login/question/question",
             "style" :                                                                                    
             {
 				"app-plus":{
@@ -154,87 +122,11 @@
             
         }
         ,{
-            "path" : "pages/goods/list",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        },
-		{
-		    "path" : "pages/goods/welfarelist",
-		    "style" :                                                                                    
-		    {
-				"app-plus":{
-					"bounce":"none"
-				},
-		        "navigationBarTitleText": "",
-		        "enablePullDownRefresh": true
-		    }
-		    
-		}
-		,{
-            "path" : "pages/goods/goodsdetail",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/auction/index",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-       
-		,{
-            "path" : "pages/auction/centuryLots",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        },
-		{
-            "path" : "pages/auction/centuryLotDetail",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/auction/goodsdetail",
             "style" :                                                                                    
             {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
+                "navigationBarTitleText": "详情",
+                "enablePullDownRefresh": false
             }
             
         }
@@ -322,31 +214,7 @@
             
         }
         ,{
-            "path" : "pages/order/waitpay",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/order/orderpay",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/order/leave",
             "style" :                                                                                    
             {
 				"app-plus":{
@@ -392,29 +260,6 @@
                 "enablePullDownRefresh": true
             }
             
-        } ,{
-            "path" : "pages/order/addwelfareauction",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/expand",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
         }
         ,{
             "path" : "pages/user/address",
@@ -442,18 +287,6 @@
         }
         ,{
             "path" : "pages/user/auctiongoods",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        },
-		{
-            "path" : "pages/user/auctiongoods2",
             "style" :                                                                                    
             {
 				"app-plus":{
@@ -636,55 +469,7 @@
             
         }
         ,{
-            "path" : "pages/user/assets/cold",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/message",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
             "path" : "pages/user/collection",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/vipcoupon",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/expenddetail",
             "style" :                                                                                    
             {
 				"app-plus":{
@@ -755,104 +540,7 @@
             }
             
         }
-        
-        ,{
-            "path" : "pages/user/pprecord",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/cooperauction",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/cooperauction/shareasset",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/assets/levelaccount",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/cooperauction/historycooper",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/cooperauction/historyagreed",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/cooperauction/detail",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        
-        ,{
-            "path" : "pages/user/cooperauction/waitrecord",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        },{
+		,{
             "path" : "pages/order/auctionsuccess",
             "style" :                                                                                    
             {
@@ -874,83 +562,9 @@
                 "enablePullDownRefresh": false
             }
             
-        },{
-            "path" : "pages/index/index-1",
-            "style" :                                                                                    
-            {
-				"app-plus":{
-					"bounce":"none"
-				},
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/ppsubstitution",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/substitution/substitution",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
         }
         ,{
             "path" : "pages/component/changeauction",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/blindbox",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/blindbox/couponcenter",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user/assets/couponrecord",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": true
-            }
-            
-        }
-        ,{
-            "path" : "pages/order/blindboxorder",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/order/blindboxorder/detail",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -987,28 +601,13 @@
 		"iconWidth": "30px",
 		"height": "60px",
 	    "backgroundColor": "#ffffff",
-		// "midButton": {
-		// 	"height":"70px",
-		// 	"iconPath": "static/tabbar/auction.png",
-		// 	"selectedIconPath": "static/tabbar/auction-cur.png",
-		// 	"text": "拍卖",
-		// 	"iconWidth":"32px",
-		// 	"color": "#fff"
-		// },
 	    "list": [{
 	        "pagePath": "pages/auction/specialshow",
 	        "iconPath": "static/tabbar/index.png",
 	        "selectedIconPath": "static/tabbar/index-cur.png",
 	        "text": "首页"
 	    },
-		// {
-	 //        "pagePath": "pages/goods/list",
-	 //        "iconPath": "static/tabbar/goods.png",
-	 //        "selectedIconPath": "static/tabbar/goods-cur.png",
-	 //        "text": "商品"
-	 //    },
 		{
-	        // "pagePath": "pages/auction/index",
 	        "pagePath": "pages/user/auctiongoods",
 	        "iconPath": "static/tabbar/auction.png",
 	        "selectedIconPath": "static/tabbar/auction-cur.png",
@@ -1024,16 +623,6 @@
 	        "selectedIconPath": "static/tabbar/user-cur.png",
 	        "text": "我的"
 	    }]
-	},
-	"usingComponts": true,
-		"condition": { //模式配置，仅开发期间生效
-		"current": 0, //当前激活的模式(list 的索引项)
-		"list": [{
-				"name": "首页", //模式名称
-				"path": "pages/index/main", //启动页面
-				"query": "" //启动参数
-			}
-		]
 	}
 
 }

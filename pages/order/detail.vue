@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image src="/static/img/bg/order-detail-bg@2x.png" class="goods-index-bg" mode="widthFix"></image>
+		<image :src="domainStatic+'/img/bg/order-detail-bg@2x.png'" class="goods-index-bg" mode="widthFix"></image>
 		<!-- <view style="height: 60rpx;"></view>		 -->
 		<cu-custom bgImage="bgunset" :isBack="true" backMethod="backHandle2">
 			<block slot="backText"></block>
@@ -23,7 +23,7 @@
 		<view class="container">
 			<view class="order-info">
 				<view class="goods-info" v-for="(items,index) in details">					
-					<image v-if="order.orderType == 41" src="../../static/img/images/blindbox.png" mode="" class="goods-image"></image>
+					<image v-if="order.orderType == 41" :src="domainStatic+'/img/images/blindbox.png'" mode="" class="goods-image"></image>
 					<image v-else :src="items.orderGoodsImage" mode="" class="goods-image"></image>
 					<view class="wp100 goods-msg flex-between fdc">
 						<view class="dflex fdc jc-fs">
@@ -163,7 +163,8 @@
 				payTimeId:"",
 				outPayTime:0,
 				userBalanceLock:"",//违约
-				customerAlert:false
+				customerAlert:false,
+				domainStatic:this.domainStatic,
 			}
 		},
 		components:{

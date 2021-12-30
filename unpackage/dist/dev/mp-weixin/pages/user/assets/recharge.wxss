@@ -7,15 +7,31 @@ page {
 }
 .pay-way {
 	background-color: #fafafa;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	padding: 0 32rpx;
 }
 .pay-way > view {
 	padding: 32rpx 0 28rpx;
 }
 .border-btn {
-	-webkit-border-radius: 45rpx;
-	        border-radius: 45rpx;
+	border-radius: 45rpx;
+}
+/* 支付弹窗 */
+.cu-modal .cu-dialog {
+	width: 600rpx;
+}
+.wait-pay {
+	width: 414rpx;
+	margin: 0 auto;
+}
+.wait-pay-box .cu-btn {
+	width: 240rpx;
+	height: 80rpx;
+	margin: 0;
+	border-radius: 40rpx;
+}
+.wait-pay-box .cu-btn[class*="line"]::after {
+	display: none;
+	border: 0;
 }
 

@@ -1,11 +1,15 @@
 <template>
 	<view id="containerId">
-		<view style="height: 60rpx;"></view>
+		<!-- <view style="height: 60rpx;"></view>
 		<view class="cu-bar">
 			<view class="action title-style-3">
 				<text class="text-xl text-bold">我的订单</text>
 			</view>
-		</view>
+		</view> -->
+		<cu-custom bgColor="bg-f6"  backMethod="backHandle" @back-handle="backHandle">
+			<block slot="backText"></block>
+			<block slot="content">我的订单</block>
+		</cu-custom>
 		<view class="flex-between ac">
 			<view class="order-nav" :class="queryObj.orderStatus == tab.orderStatus?'cur':''"
 			 v-for="(tab,index) in orderTabs" :key="index" @click.stop="tabClick(tab.orderStatus)">
@@ -20,8 +24,8 @@
 						<view class="fs-24 lh-34 fc-303">{{order.orderCreateTime}}</view>
 						<view class="fs-24 lh-34 fc-ff4">{{order.orderStatusName}}</view>
 					</view>
-					<view class="goods-info dflex ai-fs mb16" v-for="(goods,index) in order.details" v-if="order.details && order.details.length > 0">
-						<image v-if="order.orderType == 41" src="../../static/img/images/blindbox.png" class="goods-image mr16" mode=""></image>
+					<view class="goods-info dflex ai-fs mb16" v-for="(goods,index) in order.details" :key='index' v-if="order.details && order.details.length > 0">
+						<image v-if="order.orderType == 41" :src="domainStatic+'/img/images/blindbox.png'" class="goods-image mr16" mode=""></image>
 						<image v-else :src="goods.orderGoodsImage" class="goods-image mr16" mode=""></image>
 						<view class="flex-1">
 							<view class="flex-between ai-fs mb16">
@@ -97,7 +101,8 @@
 				orderList:[
 					
 				],
-				orderListLoading:false
+				orderListLoading:false,
+				domainStatic:this.domainStatic,
 			}
 		},
 		mounted: function () {

@@ -4,15 +4,13 @@
 	border: 1px solid #DDDDE6;
 }
 .remark-modal .cu-dialog {
-	-webkit-border-radius: 24rpx;
-	        border-radius: 24rpx;
+	border-radius: 24rpx;
 	width: 650rpx;
 }
 
 
 .cu-modal.bottom-modal.address-modal .cu-dialog {
-	-webkit-border-radius: 40rpx 40rpx 0 0;
-	        border-radius: 40rpx 40rpx 0 0;
+	border-radius: 40rpx 40rpx 0 0;
 	max-height: 1000rpx;
 }
 .cu-modal.bottom-modal.address-modal .cu-dialog .padding-sm {
@@ -23,8 +21,7 @@
 }
 .address-box {
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	overflow: hidden;
 	/* box-shadow: 0px 12rpx 7px rgba(196,167,123,0.2); */
 	/* box-shadow:0px 0rpx 8rpx 0px rgba(49,47,40,0.3); */
@@ -34,8 +31,7 @@
 .address-icon {
 	width: 64rpx;
 	height: 74rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	flex-shrink: 0;
 }
 .address-operation {
 	height: 64rpx;
@@ -52,8 +48,7 @@
 	width: 100%;
 	min-height: 100rpx;
 	padding-bottom: env(safe-area-inset-bottom);
-	-webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
-	        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
 }
 .submit-box .cu-btn {
 	width: 240rpx;
@@ -84,24 +79,17 @@ page {
 .order-info {
 	padding: 20rpx;
 	background: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 }
 .goods-info {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: start;
-	-webkit-align-items: flex-start;
-	        align-items: flex-start;
+	align-items: flex-start;
 }
 .goods-image {
 	width: 180rpx;
 	height: 180rpx;
-	-webkit-border-radius: 12rpx;
-	        border-radius: 12rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	border-radius: 12rpx;
+	flex-shrink: 0;
 	margin-right: 20rpx;
 }
 .goods-msg {
@@ -121,8 +109,7 @@ page {
 	width: 32rpx;
 	height: 32rpx;
 	background: #FF411C;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	font-size: 22rpx;
 	color: #fff;
 }
@@ -130,8 +117,7 @@ page {
 	width: 100%;
 	height: 90rpx;
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	padding: 0 20rpx;
 	margin-top: 20rpx;
 }
@@ -154,15 +140,13 @@ page {
 }
 .address-box {
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	overflow: hidden;
 }
 .address-icon {
 	width: 64rpx;
 	height: 74rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	flex-shrink: 0;
 }
 .address-operation {
 	height: 64rpx;

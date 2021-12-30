@@ -6,7 +6,7 @@
 		</cu-custom>
 		<view class="container">
 			<view class="flex-center fdc mb170">
-				<image src="../../static/img/images/pay-success.png" mode="widthFix" class="pay-success mb50"></image>
+				<image :src="domainStatic+'/img/images/pay-success.png'" mode="widthFix" class="pay-success mb50"></image>
 				<view class="fs-64 lh-64 fc-3 fw-b dflex ai-fe">
 					<view class="fs-50 lh-50 mb4">￥</view>{{ order.orderPayMoney| intFormat}}{{ order.orderPayMoney| decimalFormat}}
 				</view>
@@ -21,7 +21,8 @@ export default {
 		data() {
 			return {
 				orderId:'',
-				order:{}
+				order:{},
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad(e) {

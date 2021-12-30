@@ -37,7 +37,6 @@
 				menuData:[
 					{"id":1,"url":"/pages/index/index","type":1},
 					{"id":2,"url":"/pages/goods/list","type":1},
-					{"id":3,"url":"/pages/auction/index","type":2},
 					{"id":4,"url":"/pages/order/order","type":2},
 					{"id":5,"url":"/pages/user/index","type":2}
 				],

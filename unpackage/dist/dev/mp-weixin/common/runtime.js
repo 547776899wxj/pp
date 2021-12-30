@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"colorui/components/cu-custom":1,"pages/component/customer":1,"components/helang-compress/helang-compress":1,"components/easy-loadimage/easy-loadimage":1,"uni_modules/page-pagination/components/page-pagination/page-pagination":1,"components/uni-popup/uni-popup":1,"components/uni-popup/uni-popup-dialog":1,"components/uni-transition/uni-transition":1};
+/******/ 		var cssChunks = {"colorui/components/cu-custom":1,"components/easy-loadimage/easy-loadimage":1,"pages/component/customer":1,"components/helang-compress/helang-compress":1,"components/uni-popup/uni-popup":1,"components/uni-popup/uni-popup-dialog":1,"components/uni-transition/uni-transition":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"colorui/components/cu-custom":"colorui/components/cu-custom","pages/component/customer":"pages/component/customer","components/helang-compress/helang-compress":"components/helang-compress/helang-compress","components/easy-loadimage/easy-loadimage":"components/easy-loadimage/easy-loadimage","uni_modules/page-pagination/components/page-pagination/page-pagination":"uni_modules/page-pagination/components/page-pagination/page-pagination","components/uni-popup/uni-popup":"components/uni-popup/uni-popup","uni_modules/lime-painter/components/lime-painter/index":"uni_modules/lime-painter/components/lime-painter/index","components/uni-popup/uni-popup-dialog":"components/uni-popup/uni-popup-dialog","components/uni-transition/uni-transition":"components/uni-transition/uni-transition"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"colorui/components/cu-custom":"colorui/components/cu-custom","components/easy-loadimage/easy-loadimage":"components/easy-loadimage/easy-loadimage","pages/component/customer":"pages/component/customer","components/helang-compress/helang-compress":"components/helang-compress/helang-compress","components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/uni-popup/uni-popup-dialog":"components/uni-popup/uni-popup-dialog","components/uni-transition/uni-transition":"components/uni-transition/uni-transition"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

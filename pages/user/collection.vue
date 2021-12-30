@@ -5,7 +5,7 @@
 			<block slot="content">收藏</block>
 		</cu-custom>
 		<view class="container">
-			<view class="goods-list" v-for="(item,index) in list.rows" @click="toGoodsDetail(item.goodsId)">
+			<view class="goods-list" v-for="(item,index) in list.rows" :key='index' @click="toGoodsDetail(item.goodsId)">
 				<image :src="item.goodsImage" class="goods-image" mode=""></image>
 				<view class="wp100 goods-info flex-between ai-fs fdc">
 					<view class="wp100">
@@ -16,7 +16,6 @@
 							<view v-else></view>
 							<!-- 无标签 -->
 							<!-- <view class="h28"></view> -->
-							<!-- <image src="../../static/img/icon/collection@2x.png" class="collection-icon mt8 mb24" mode="" @click="handleCollect(item.goodsId)"></image> -->
 						</view>
 					</view>
 					<view class="flex-between ai-fe wp100">

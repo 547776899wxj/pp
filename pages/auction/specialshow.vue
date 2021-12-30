@@ -1,20 +1,9 @@
 <template>
 	<view @touchstart="start" @touchend="end">
-		<!--  @touchstart="start" @touchend="end" -->
-		<image src="../../static/img/bg/goods-bg@2x.png" class="goods-index-bg" mode="widthFix"></image>
+		<image :src="domainStatic+'/img/bg/goods-bg@2x.png'" class="goods-index-bg" mode="widthFix"></image>
 		<view style="height: 60rpx;"></view>
 		<!-- 搜索框 -->
 		<view class="flex-between ac pl32 pr32 auction-title-box">
-			<!-- <view class="back-btn" @tap="back()">
-				<text class="cuIcon-back fc-f"></text>
-			</view>
-			<view class="flex-center fdc auction-title-info">
-				<view class="fs-36 lh-50 fc-f fw-b">{{auction.auctionName}}</view>
-				<view class="fs-24 lh-34 fc-f op75">{{countDownStr}}</view>
-			</view>
-			<view class="vip-coupon-btn flex-center" @click="showVipDialog=true" v-show="auction.auctionStatus ===0">
-				{{vipCouponAmount}}VIP券
-			</view> -->
 			<view class="flex-center fdc auction-title-info">
 				<view class="fs-36 lh-50 fc-f fw-b">拍卖商品</view>
 			</view>
@@ -27,17 +16,9 @@
 					<view class="cur-icon"></view>
 				</view>
 			</view>
-			<!-- 	<view class="switchlist-btn" @click="changeListType" >
-				<image
-					:src="waterfall?'/static/img/icon/switchlist-icon@2x.png':'/static/img/icon/switchlist-icon2@2x.png'"
-					mode=""></image>
-			</view> -->
 		</view>
 		<!-- 商品列表 -->
 		<view class="goods-box">
-			<!-- <view class="auction-notice fs-26 lh-36 fc-303">
-				<text class="fw-b">保障金</text>：为了保障抢拍的公平性！
-			</view> -->
 			<view class="auction-notice fs-26 lh-36 fc-303">
 				<label class="wp100 dflex ac" @click="changeFollow">
 					<checkbox class="hh-radio fs-0 mr16 round" :class="queryObj.followed?'checked':''"
@@ -353,9 +334,10 @@
 					<!-- 循环列表 -->
 					<view>
 						<view class="goods-list" v-for="(item,index) in lotList" :key="item.auctionLotAutoId+index"
-							@tap="goToDetail(item)">
-							<easyLoadimage :scroll-top="scrollTop" :image-src="item.lotImage" class="goods-image"
-								mode=""></easyLoadimage>
+							@tap="goToDetail(index)">
+						<!-- 	<easyLoadimage :scroll-top="scrollTop" :image-src="item.lotImage" class="goods-image"
+								mode=""></easyLoadimage> -->
+								<image :src="item.lotImage" mode="" class="goods-image"></image>
 							<view class="goods-info">
 								<view class="goods-name mb18">{{item.lotName}}</view>
 								<view class="flex-between ac mb36">
@@ -364,83 +346,26 @@
 									</view>
 									<view class="dflex ac">
 										<view class="fs-20 lh-28 fc-939 fs-0 mr8">关注</view>
-										<image src="../../static/img/icon/follower@2x.png" mode=""
+										<image :src="domainStatic+'/img/icon/follower@2x.png'" mode=""
 											@click.stop="followLot(item.auctionLotAutoId,index)" class="follow-icon"
 											v-show="item.followed"></image>
-										<image src="../../static/img/icon/follow@2x.png" mode=""
+										<image :src="domainStatic+'/img/icon/follow@2x.png'" mode=""
 											@click.stop="followLot(item.auctionLotAutoId,index)" class="follow-icon"
 											v-show="!item.followed"></image>
 									</view>
 								</view>
 								<view class="flex-between ai-fe">
 									<view class="dflex ai-fs fdc">
-										<!-- <view class="fs-24 lh-32 fc-e31 dflex ac mb12">
-											<text class="fs-22 fc-606">履约保障金：</text><text
-												class="fs-20">￥</text>{{item.auctionLotUserDepositMoney}}
-										</view> -->
 										<view class="fs-36 lh-36 fc-e31 fw-b"><text
 												class="fs-24">￥</text>{{item.auctionLotOutPrice}}</view>
 									</view>
 									<view class="small-btn fc-f lh-60 tc m-bg-pp"
-										@click.stop="openBuyDialog(item)">立即购买</view>
+										@click.stop="openBuyDialog(index)">立即购买</view>
 								</view>
 							</view>
 						</view>
 					</view>
-
-					<!-- 瀑布流列表循环 -->
-					<!-- <view class="waterfall-box dflex ai-fs" >
-						<view class="waterfall-content">
-							<view class="waterfall-list" v-for="(item,index) in lotList" :key="item.auctionLotAutoId" @click="goToDetail(item)">
-								<view class="goods-image-box">
-									<easyLoadimage :scroll-top="scrollTop" 
-									:image-src="item.lotImage"
-									:open-transition="false"
-									loading-mode="spin-circle"
-									 class="wp100" mode="widthFix" >
-									</easyLoadimage>
-									<view class="rob-icon">抢购价</view>
-									<view class="rob-price-bg">
-									</view>
-									<view class="fc-ff4 lh-32 price-box">
-										<text class="fs-24">￥</text>
-										<text class="fs-32 fw-b">{{item.auctionLotOutPrice | intFormat}}</text>
-										<text class="fs-24">{{item.auctionLotOutPrice | decimalFormat}}</text>
-									</view>
-								</view>
-								<view class="waterfall-goods-info">
-									<view class="wp100 text-hidden fs-28 fc-303 lh-40 mb8" >
-										{{item.lotName}}</view>
-									<view class="flex-between ac mb6">
-										<view class="fs-22 fc-939 lh-32">{{item.auctionLotFollow}}人关注</view>
-										<image src="/static/img/icon/follower@2x.png" class="follow-icon"
-											@click.stop="followLot(item.auctionLotAutoId,index)" v-show="item.followed"></image>
-										<image src="/static/img/icon/follow@2x.png" class="follow-icon"
-											@click.stop="followLot(item.auctionLotAutoId,index)" v-show="!item.followed"></image>
-									</view>
-									<view class="fs-26 lh-36 fc-606 mb8">拍品编号：{{item.lotId}}</view>
-									<view class="mb12">
-										<text class="fs-22 fc-606">履约保障金：</text>
-										<text class="fs-20 fc-ff4">￥</text>
-										<text
-											class="fs-28 fc-ff4 fw-b">{{item.auctionLotUserDepositMoney | intFormat}}</text>
-										<text
-											class="fs-20 fc-ff4">{{item.auctionLotUserDepositMoney | decimalFormat}}</text>
-									</view>
-									<view class="rob-btn" :class="{open:item.stock>0,unopen:item.stock===0}"  v-show="auction.auctionStatus===1 && !item.lock"
-										@click.stop="openBuyDialog(item)">去抢购</view>
-									<view @click.stop="" class="rob-btn unopen" v-show="auction.auctionStatus!==1 || item.lock">去抢购</view>
-								</view>
-							</view>
-						</view>
-					</view> -->
 					<listempty :list="lotList" :loading="loading" />
-					<!-- <uni-pagination @change="changePage" title="标题文字" prevText="上一页" nextText="下一页" :total="totalCount" :pageSize="pageSize" :current="currentPage"></uni-pagination> -->
-					<!-- <page-pagination ref="paging" @change="changePage" :total="totalCount" :pageSize="pageSize"
-						:showAround="true" :btnText="true" :forceEllipses="true" :currentPage="currentPage">
-					</page-pagination> -->
-
-					<!-- <view class="flex-center p20">当前页：{{currentPage}}, &nbsp;拍品总量：{{totalCount}}, &nbsp;每页数据：{{pageSize}}</view> -->
 					<view style="height: 100rpx;"></view>
 				</scroll-view>
 
@@ -520,7 +445,7 @@
 		},
 		data() {
 			return {
-				lotUserDepositTips: uni.getStorageSync('lotUserDepositTips') || false,
+				lotUserDepositTips: true,
 				showBuyDialog: false,
 				isCheck: true,
 				vipCoupon: false,
@@ -558,6 +483,7 @@
 				waterfall: true,
 				stockTimerId: '',
 				scrollTop: 0,
+				domainStatic:this.domainStatic
 			}
 		},
 		watch: {
@@ -865,24 +791,18 @@
 					}
 				})
 			},
-			goToDetail(lot) {
+			goToDetail(index) {
+				let lot = this.lotList[index];
 				uni.navigateTo({
 					url: '/pages/auction/goodsdetail?auctionId=' + this.queryObj.auctionId + '&lotId=' + lot
 						.lotId + '&goodsId=' + lot.lotGoodsId
 				})
 			},
-			openBuyDialog(lot) {
-				this.currentLot = lot
-				if (uni.getStorageSync('lotUserDepositTips')) {
-					this.secKillLot()
-					// lot.auctionId = this.queryObj.auctionId;
-					// uni.setStorageSync('ppAddorderData',lot)
-					// uni.navigateTo({
-					// 	url: '../order/ppAddorder',
-					// });
-					return
-				}
-				this.showBuyDialog = true
+			openBuyDialog(index) {
+				let item = this.lotList[index];
+				this.currentLot = item;
+				this.secKillLot()
+				// this.showBuyDialog = true
 			},
 			secKillLot() {
 				if (!this.btnloading) {

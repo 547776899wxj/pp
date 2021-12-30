@@ -21,10 +21,10 @@
 				<view class="addImg">
 					<view class='img_box' v-for="(item,index) in form.imgList">
 						<image class='goods' :src='item'></image>
-						<image class='close' src='../../../static/img/icon/goods-close@3x.png' @click="form.imgList.splice(index,1)"></image>
+						<image class='close' :src="domainStatic+'/img/icon/goods-close@3x.png'" @click="form.imgList.splice(index,1)"></image>
 					</view>
 					<view class="add_box" @click="onChooseImage">
-						<image src="../../../static/img/icon/d_img@3x.png"></image>
+						<image :src="domainStatic+'/img/icon/d_img@3x.png'"></image>
 						<text>添加图片</text>
 					</view>
 				</view>
@@ -55,7 +55,8 @@
 					suggestLabelId:'',
 					suggestContent:'',
 					imgList:[]
-				}
+				},
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad(){

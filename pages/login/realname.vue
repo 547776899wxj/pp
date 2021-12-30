@@ -6,14 +6,14 @@
 				<view class="mr30">
 					<view class="fs-28 lh-28 fc-303 mb20">上传证件照正面</view>
 					<view class="form-group" @tap="onSelectPeopleCardPicA">
-						<image v-if="!form.peopleCardPicA" src="../../static/img/images/idcard1@2x.png"></image>
+						<image v-if="!form.peopleCardPicA" :src="domainStatic+'/img/images/idcard1@2x.png'"></image>
 						<image v-else :src="form.peopleCardPicA"></image>
 					</view>
 				</view>
 				<view>
 					<view class="fs-28 lh-28 fc-303 mb20">上传证件照反面</view>
 					<view class="form-group" @tap="onSelectPeopleCardPicB">
-						<image v-if="!form.peopleCardPicB" src="../../static/img/images/idcard2@2x.png"></image>
+						<image v-if="!form.peopleCardPicB" :src="domainStatic+'/img/images/idcard2@2x.png'"></image>
 						<image v-else :src="form.peopleCardPicB"></image>
 					</view>
 				</view>
@@ -35,7 +35,7 @@
 							{{form.addressAreaString||'请选择地区'}}
 						</view>
 					</picker>
-					<image src="/static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/more-icon.png'" mode="" class="m-icon"></image>
 				</view>
 			</view>
 			<view class="flex-between ai-fe mb20">
@@ -99,7 +99,8 @@
 					ocrCardNumber:'',
 					peopleCardPicA: '',
 					peopleCardPicB: '',
-				}
+				},
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad(options) {

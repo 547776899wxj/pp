@@ -13,8 +13,7 @@ page {
 .bank-box {
 	padding: 32rpx 6rpx 32rpx 32rpx;
 	background-color: #fafafa;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 }
 .bank-icon {
 	width: 60rpx;
@@ -42,11 +41,18 @@ page {
 }
 .withdrawal-tips {
 	padding: 24rpx 32rpx;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	background-color: #fafafa;
 }
 .tips-list+.tips-list {
 	margin-top: 18rpx;
+}
+.remark-list {
+	width: 100%;
+	height: 90rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	padding: 0 32rpx;
+	border: 1px solid #DDDDE6;
 }
 

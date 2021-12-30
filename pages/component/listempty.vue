@@ -1,11 +1,11 @@
 <template>
 	<view>	
 		<view class="kzt-box flex-center fdc" v-show="!loading&&(!list || list.length===0)">
-			<image src="../../static/img/images/kzt@2x.png" class="kzt mb40" mode=""></image>
+			<image :src="domainStatic+'/img/images/kzt@2x.png'" class="kzt mb40" mode=""></image>
 			<view class="fs-28 fc-606">暂无数据</view>
 		</view>
 		<view v-show="loading" class="kzt-box flex-center">
-			<image src="../../static/img/images/page-loading.gif" class="loading" mode=""></image>
+			<image :src="domainStatic+'/img/images/page-loading.gif'" class="loading" mode=""></image>
 		</view>
 	</view>
 </template>
@@ -21,7 +21,7 @@
 		},
 		data() {
 			return {
-
+				domainStatic:this.domainStatic
 			}
 		},
 	watch:{

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image src="../../../static/img/bg/order-detail-bg@2x.png" class="goods-index-bg" mode="widthFix"></image>
+		<image :src="domainStatic+'/img/bg/order-detail-bg@2x.png'" class="goods-index-bg" mode="widthFix"></image>
 		<view style="height: 60rpx;"></view>
 		<view class="flex-between ac pl32 pr32 auction-title-box">
 			<view class="back-btn" @tap="goBack">
@@ -184,6 +184,7 @@
 				addressList:[],
 				showAddress:false,
 				customerAlert:false,
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad(option) {

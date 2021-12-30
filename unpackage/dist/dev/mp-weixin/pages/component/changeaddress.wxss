@@ -1,7 +1,6 @@
 
 .cu-modal.bottom-modal.address-modal .cu-dialog {
-	-webkit-border-radius: 40rpx 40rpx 0 0;
-	        border-radius: 40rpx 40rpx 0 0;
+	border-radius: 40rpx 40rpx 0 0;
 	max-height: 1000rpx;
 }
 .cu-modal.bottom-modal.address-modal .cu-dialog .padding-sm {
@@ -12,8 +11,7 @@
 }
 .address-box {
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	overflow: hidden;
 	/* box-shadow: 0px 12rpx 7px rgba(196,167,123,0.2); */
 	/* box-shadow:0px 0rpx 8rpx 0px rgba(49,47,40,0.3); */
@@ -23,8 +21,7 @@
 .address-icon {
 	width: 64rpx;
 	height: 74rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	flex-shrink: 0;
 }
 .address-operation {
 	height: 64rpx;
@@ -41,8 +38,7 @@
 	width: 100%;
 	min-height: 100rpx;
 	padding-bottom: env(safe-area-inset-bottom);
-	-webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
-	        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
 }
 .submit-box .cu-btn {
 	width: 240rpx;

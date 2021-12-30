@@ -7,7 +7,7 @@
 		<view class="container">
 			<view class="address-box mb20">
 				<view class="dflex ac pt20 pl20 pr20">
-					<image src="../../static/img/icon/address-icon@2x.png" mode="" class="address-icon mt4 mr20">
+					<image :src="domainStatic+'/img/icon/address-icon@2x.png'" mode="" class="address-icon mt4 mr20">
 					</image>
 					<view class="dflex fdc jc-fs">
 						<view class="dflex ai-fe mb8">
@@ -69,7 +69,8 @@
 				orderExpress: {},
 				expressArr: [],
 				orderPayTime: "",
-				expressCompany:""
+				expressCompany:"",
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad(e) {

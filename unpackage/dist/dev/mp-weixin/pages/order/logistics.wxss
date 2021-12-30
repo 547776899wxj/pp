@@ -5,8 +5,7 @@
 }
 .address-box {
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	overflow: hidden;
 }
 .logistics-tips {
@@ -19,8 +18,7 @@
 .address-icon {
 	width: 64rpx;
 	height: 74rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	flex-shrink: 0;
 }
 .container {
 	padding: 8rpx 20rpx;

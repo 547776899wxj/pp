@@ -11,7 +11,7 @@
 		</view>
 		<view class="container">
 			<view class="flex-center logo-box mb66">
-				<image src="../../static/img/images/logo@2x.png" class="logo"></image>
+				<image :src="domainStatic+'/img/images/logo@2x.png'" class="logo"></image>
 			</view>
 			<view class="form-group">
 				<input placeholder="手机号码" maxlength="11" name="input" placeholder-class="fc-c4cc" v-model="form.mobile">
@@ -49,7 +49,8 @@
 					mobile: '',
 					code: '',
 					isCheck: true,
-				}
+				},
+				domainStatic:this.domainStatic,
 			}
 		},
 		methods: {

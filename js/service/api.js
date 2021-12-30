@@ -2,6 +2,8 @@
 export const sendRegisterSmsCode = data => post('/rest/v4/pp/app/sendRegisterSmsCode', data);
 /** 发送短信验证码-登录 **/
 export const sendLoginSmsCode = data => post('/rest/v4/pp/app/sendLoginSmsCode', data);
+/** 微信小程序获取openid**/
+export const getWxOpenToken = data => post('/rest/v4/pp/app/getWxOpenToken', data);
 /** 发送短信验证码-找回登录密码 **/
 export const sendResetPasswordSmsCode = data => post('/rest/v4/pp/app/sendResetPasswordSmsCode', data);
 /** 发送短信验证码-绑定微信 **/

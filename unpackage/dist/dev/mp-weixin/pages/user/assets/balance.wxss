@@ -36,8 +36,7 @@
 .balance-list {
 	padding: 22rpx 20rpx 20rpx;
 	background-color: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 }
 .balance-list+.balance-list {
 	margin-top: 20rpx;

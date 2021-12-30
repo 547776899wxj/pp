@@ -25,34 +25,7 @@
 					<view class="fs-30 lh-40 fc-606">￥</view>
 					<input type="number" v-model="lotOutPrice" @blur="getAuctionLotDepositMoney">
 				</view>
-				<!-- <view class="fs-24 lh-34 fc-939">
-					注：转拍价不能高出拍入价{{lotObj.lotInPrice>3000?auctionConfig.auctionMoneyUpLimit:auctionConfig.auctionMoneyUpLimit2}}%，即最高可卖¥{{maxLotOutPrice}}
-					</view> -->			
-					<!-- <view class="fs-24 lh-34 fc-939" v-if="leaveLotCount>0">
-					您的拍品已经流拍{{leaveLotCount}}次了，流拍3次之后只能留下自用
-					</view> -->
 			</view>
-			<!-- <view class="remark-list flex-between ac" v-if="couponEnable">
-				<view class="fs-28 fc-303 fw-b">使用券</view>
-				<view class="fs-28 fc-606 dflex ac" @click="showCoupon=true">
-					<template>{{couponTypeNameObj[putLotObj.couponType+'']||'请选择'}}</template>
-					<image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image></view>
-			</view>
-			<view class="remark-list flex-between ac">
-				<view class="fs-28 fc-303 fw-b">申请挂拍场次时间</view>
-				<view class="fs-28 fc-606" v-if="putLotObj.couponType===''">{{neartime}}</view>
-				<picker mode="selector" v-if="putLotObj.couponType===41" :range="priorityDays" @change="changePriority">
-					<view  class="dflex ac">
-						
-					
-					<view>{{priorityDay||'请选择'}}</view><image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image>
-			</view>
-				</picker>
-				<picker  mode="selector" v-if="putLotObj.couponType===42" :range="topDayDis" @change="changeTop">
-						<view  class="dflex ac"><view>{{topDay||'请选择'}}</view><image src="../../static/img/icon/more-icon.png" mode="" class="m-icon"></image>
-				</view>
-				</picker>
-			</view> -->
 		</view>
 		<view class="cu-bar dflex fdc bg-white tabbar border submit-box">
 			<view class="wp100 pt12 pb12 dflex justify-between">
@@ -64,21 +37,6 @@
 				</label>
 				<button class="cu-btn bg-pp fc-f round" @tap="pubAuctionLot">确认上架</button>
 			</view>
-			<!-- <view class="wp100 flex-between ac pt12 pb12">
-				<view class="action">
-					<view class="dflex ac">
-						<view class="fs-20 lh-28 fc-303 mt8">佣金：</view>
-						<view class="dflex ai-fe fw-b">
-							<view class="fs-24 fc-e31 mb6">￥</view>
-							<view class="fs-48 lh-48 fc-e31">{{depositMoney[0]||''}}</view>
-							<view class="fs-28 fc-e31 mb6" v-if="depositMoney[1]">.{{depositMoney[1]}}</view>
-						</view>
-					</view>
-					<view class="fs-22 lh-32 fc-939 tl" v-show="lotOutPrice>=lotObj.lotInPrice">佣金为转拍溢价部分的{{auctionConfig.auctionUpAddRate}}%</view>
-					<view class="fs-22 lh-32 fc-939 tl" v-show="lotOutPrice<lotObj.lotInPrice">佣金为转拍跌价的{{auctionConfig.auctionLowerRate}}%</view>
-				</view>
-				<button class="cu-btn bg-pp fc-f round" @tap="pubAuctionLot">确认支付</button>
-			</view> -->
 		</view>
 		<view class="cu-modal agreement-modal" :class="{show:showPop}">
 			<view class="cu-dialog">

@@ -9,7 +9,7 @@
 				<view class="flex-center logistics-tips" v-if="order.orderOtherMoney > 0">配送至{{getExpressAreaName(orderAddress.addressAreaString)}}需添加运费</view>
 				<view class="flex-between ac p20">
 					<view class="dflex ac">
-						<image src="/static/img/icon/address-icon@2x.png" mode="" class="address-icon mt4 mr20"></image>
+						<image :src="domainStatic+'/img/icon/address-icon@2x.png'" mode="" class="address-icon mt4 mr20"></image>
 						<view class="dflex fdc jc-fs">
 							<view class="dflex ai-fe mb8">
 								<view class="fs-36 fc-303 fw-b lh-50 mr16">{{orderAddress.addressContacts}}</view>
@@ -18,12 +18,12 @@
 							<view class="fs-26 lh-40 fc-939">{{orderAddress.addressAllName}}</view>
 						</view>
 					</view>
-					<image @click.stop="showAddressList" src="/static/img/icon/reload.png" mode="" class="m-icon fs-0 ml34"></image>
+					<image @click.stop="showAddressList" :src="domainStatic+'/img/icon/reload.png'" mode="" class="m-icon fs-0 ml34"></image>
 				</view>
 			</view>
 			<view v-else class="remark-list flex-between ac mb20" @click.stop="toAddress()">
 				<view class="fs-28 fc-303 fw-b">新增收货地址</view>
-				<image src="/static/img/icon/arrow@3x.png" mode="" class="more-icon"></image>
+				<image :src="domainStatic+'/img/icon/arrow@3x.png'" mode="" class="more-icon"></image>
 			</view>
 			<view class="goods-info mb20" v-if="details &&details.length > 0" v-for="(item,index) in details" :Key="index">
 				<image :src="item.orderGoodsImage" mode="" class="goods-image"></image>
@@ -49,19 +49,7 @@
 						</checkbox>
 					</label>
 				</view>
-				<!-- <view class="flex-between ac">
-					<view class="dflex ac">
-						<image src="../../static/img/icon/pay-bag@2x.png" mode="" class="m-icon mr32"></image>
-						<view class="fs-28 fc-303 dflex">余额支付 (<view class="dflex ai-fe">
-								<view class="fs-24 fc-303">￥</view>
-								<view class="fs-28 lh-28 fc-303 mb2">{{userBalance.money}}</view>
-							</view>)</view>
-					</view>
-					<label for="">
-						<checkbox class="hh-radio fs-0 mr16 round" @click="orderMoneyType = 11" :class="orderMoneyType == 11?'checked':''" :checked="orderMoneyType == 11">
-						</checkbox>
-					</label>
-				</view> -->
+		
 			</view>
 		</view>
 		<view class="cu-bar dflex fdc bg-white tabbar border submit-box">
@@ -93,7 +81,7 @@
 
 				</view>
 				<view class="wait-pay lh-48 fs-28 fc-303 mb80">
-					<image src="../../static/img/images/waitpay@2x.png" mode="widthFix" class="mb28"></image>
+					<image :src="domainStatic+'/img/images/waitpay@2x.png'" mode="widthFix" class="mb28"></image>
 					<view class="fs-30 lh-30 fc-9">正在支付中……</view>
 				</view>
 				<view class="padding-lg pt0 cu-bar bg-white dflex jc-c">
@@ -128,7 +116,8 @@
 					channelType:'',
 					money:0
 				},
-				channelData:[]
+				channelData:[],
+				domainStatic:this.domainStatic,
 			}
 		},
 		components:{

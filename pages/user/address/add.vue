@@ -22,15 +22,11 @@
 							{{address.addressAreaString||'请选择地区'}}
 						</view>
 					</picker>
-					<image src="/static/img/icon/more-icon.png" mode="" class="m-icon"></image>
+					<image :src="domainStatic+'/img/icon/more-icon.png'" mode="" class="m-icon"></image>
 				</view>
 			</view>
 			<view class="flex-between ai-fe mb20">
 				<view class="fs-28 lh-28 fc-303">详细地址</view>
-				<!-- <view class="dflex ac" @click="getLocation">
-					<image src="/static/img/icon/location-icon@2x.png" mode="" class="location-icon"></image>
-					<view class="fs-24 lh-34 fc-ff4">定位</view>
-				</view> -->
 			</view>
 			<view class="form-group textarea">
 				<textarea maxlength="-1" v-model="address.addressDesc" @input="textareaAInput" placeholder=""></textarea>
@@ -69,7 +65,8 @@
 					addressWxAlias:"",
 					addressSex:""
 				},
-				pickerDisable:false
+				pickerDisable:false,
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad (e) {

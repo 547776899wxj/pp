@@ -9,7 +9,7 @@
 				<view class="flex-center logistics-tips" v-if="order.orderOtherMoney > 0">配送至{{getExpressAreaName(orderAddress.addressAreaString)}}需添加运费</view>
 				<view class="flex-between ac p20">
 					<view class="dflex ac">
-						<image src="/static/img/icon/address-icon@2x.png" mode="" class="address-icon mt4 mr20"></image>
+						<image :src="domainStatic+'/img/icon/address-icon@2x.png'" mode="" class="address-icon mt4 mr20"></image>
 						<view class="dflex fdc jc-fs">
 							<view class="dflex ai-fe mb8">
 								<view class="fs-36 fc-303 fw-b lh-50 mr16">{{orderAddress.addressContacts}}</view>
@@ -18,12 +18,12 @@
 							<view class="fs-26 lh-40 fc-939">{{orderAddress.addressAllName}}</view>
 						</view>
 					</view>
-					<image src="/static/img/icon/reload.png" mode="" class="m-icon fs-0 ml34"></image>
+					<image :src="domainStatic+'/img/icon/reload.png'" mode="" class="m-icon fs-0 ml34"></image>
 				</view>
 			</view>
 			<view v-else class="remark-list flex-between ac mb20" @click.stop="toAddress()">
 				<view class="fs-28 fc-303 fw-b">选择收货地址</view>
-				<image src="/static/img/icon/arrow@3x.png" mode="" class="more-icon"></image>
+				<image :src="domainStatic+'/img/icon/arrow@3x.png'" mode="" class="more-icon"></image>
 			</view>
 			
 			<view class="order-info">
@@ -84,7 +84,7 @@
 				<view class="fs-28 fc-303 fw-b">备注</view>
 				<view class="flex justify-end">
 					<view>{{userMessage}}</view>
-					<image src="/static/img/icon/arrow@3x.png" mode="" class="more-icon"></image>
+					<image :src="domainStatic+'/img/icon/arrow@3x.png'" mode="" class="more-icon"></image>
 				</view>
 				
 			</view>
@@ -124,7 +124,8 @@
 				orderAddress:{},
 				showOrderRemark:false,
 				showAddress:false,
-				userMessage:""//订单备注
+				userMessage:"",//订单备注
+				domainStatic:this.domainStatic,
 			}
 		},
 		components:{

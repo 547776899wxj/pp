@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "remark-components": "/pages/component/remark",
-    "change-address": "/pages/component/changeaddress"
-  }
-}

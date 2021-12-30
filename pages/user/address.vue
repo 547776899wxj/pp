@@ -9,7 +9,7 @@
 				@click.stop="chooseAddress(add.addressId)">
 				<view class="flex-between ac p20">
 					<view class="dflex ac">
-						<image src="/static/img/icon/address-icon@2x.png" mode="" class="address-icon mt4 mr20"></image>
+						<image :src="domainStatic+'/img/icon/address-icon@2x.png'" mode="" class="address-icon mt4 mr20"></image>
 						<view class="dflex fdc jc-fs">
 							<view class="dflex ai-fe mb8">
 								<view class="fs-36 fc-303 fw-b lh-50 mr16">{{add.addressContacts}}</view>
@@ -18,7 +18,7 @@
 							<view class="fs-26 lh-40 fc-939">{{add.addressAllName}}</view>
 						</view>
 					</view>
-					<image @click.stop="goToAdd(add.addressId)" src="/static/img/icon/edit-icon@2x.png" mode=""
+					<image @click.stop="goToAdd(add.addressId)" :src="domainStatic+'/img/icon/edit-icon@2x.png'" mode=""
 						class="m-icon fs-0 ml34"></image>
 				</view>
 				<view class="flex-between ac address-operation">
@@ -45,7 +45,8 @@
 		data() {
 			return {
 				addressList: [],
-				needBackAddressId: false
+				needBackAddressId: false,
+				domainStatic:this.domainStatic,
 			}
 		},
 		onLoad(e) {

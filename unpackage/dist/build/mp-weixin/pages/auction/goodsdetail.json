@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "customer": "/pages/component/customer"
-  }
-}

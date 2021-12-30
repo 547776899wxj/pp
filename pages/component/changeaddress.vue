@@ -22,7 +22,7 @@
 										<view class="fs-26 lh-40 fc-939 tl">{{add.addressAreaString}}</view>
 									</view>
 								</view>
-								<image src="/static/img/icon/edit-icon@2x.png" @click.stop="goToAdd(add.addressId)" mode="" class="m-icon fs-0 ml34">
+								<image :src="domainStatic+'/img/icon/edit-icon@2x.png'" @click.stop="goToAdd(add.addressId)" mode="" class="m-icon fs-0 ml34">
 								</image>
 							</view>
 						</view>
@@ -52,7 +52,8 @@
 		},
 		data() {
 			return {
-				alert:false
+				alert:false,
+				domainStatic:this.domainStatic
 			}
 		},
 		watch:{

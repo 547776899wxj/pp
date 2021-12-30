@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "helang-compress": "/components/helang-compress/helang-compress"
-  }
-}

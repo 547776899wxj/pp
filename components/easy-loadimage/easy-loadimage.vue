@@ -118,7 +118,7 @@ export default{
     /* 加载失败、加载中的占位图样式控制 */
     .loadfail-img{
          height: 100%;
-         background: url('~@/static/easy-loadimage/loadfail.png') no-repeat center;
+         background: url('https://pp.hoshiibuy.com/static/easy-loadimage/loadfail.png') no-repeat center;
          background-size: 50%;
     }
     .loading-img{
@@ -126,7 +126,7 @@ export default{
     }
     /* 转圈 */
     .spin-circle{
-        background: url('~@/static/easy-loadimage/loading.gif') no-repeat center;
+        background: url('https://pp.hoshiibuy.com/static/easy-loadimage/loading.gif') no-repeat center;
         background-size: 100rpx;
     }
     /* 动态灰色若隐若现 */

@@ -56,8 +56,7 @@
 }
 .order-list {
 	padding: 16rpx 24rpx;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	background-color: #fff;
 }
 .order-list+.order-list {

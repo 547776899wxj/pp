@@ -28,25 +28,18 @@
 .order-info {
 	padding: 20rpx;
 	background: #fff;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	margin-bottom: 20rpx;
 }
 .goods-info {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: start;
-	-webkit-align-items: flex-start;
-	        align-items: flex-start;
+	align-items: flex-start;
 }
 .goods-image {
 	width: 180rpx;
 	height: 180rpx;
-	-webkit-border-radius: 12rpx;
-	        border-radius: 12rpx;
-	-webkit-flex-shrink: 0;
-	        flex-shrink: 0;
+	border-radius: 12rpx;
+	flex-shrink: 0;
 	margin-right: 20rpx;
 }
 .goods-msg {
@@ -66,8 +59,7 @@
 	width: 32rpx;
 	height: 32rpx;
 	background: #FF411C;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	font-size: 22rpx;
 	color: #fff;
 }

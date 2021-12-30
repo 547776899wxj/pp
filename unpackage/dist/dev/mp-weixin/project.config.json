@@ -4,13 +4,13 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
-    "es6": true,
+    "urlCheck": true,
+    "es6": false,
     "minified": true
   },
   "compileType": "miniprogram",
   "libVersion": "",
-  "appid": "wx90f0c302cee5cbc6",
+  "appid": "wx0b054d4d9bf41857",
   "projectname": "好获严选",
   "condition": {
     "search": {
@@ -26,15 +26,8 @@
       "list": []
     },
     "miniprogram": {
-      "current": 0,
-      "list": [
-        {
-          "name": "首页",
-          "query": "",
-          "id": 0,
-          "pathName": "pages/index/main"
-        }
-      ]
+      "current": -1,
+      "list": []
     }
   }
 }

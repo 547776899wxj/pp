@@ -4,8 +4,7 @@
 	bottom: 0;
 	width: 100%;
 	z-index: 9;
-	-webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
-	        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -66,8 +65,7 @@
 }
 .order-list {
 	padding: 16rpx 24rpx;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	background-color: #fff;
 }
 .order-list+.order-list {

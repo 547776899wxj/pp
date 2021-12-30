@@ -11,10 +11,8 @@
   background:#fff;
   padding: 0 32rpx;
   margin-bottom: 32rpx;
-  -webkit-border-radius: 8rpx;
-          border-radius: 8rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  border-radius: 8rpx;
+  box-sizing: border-box;
 }
 .list-item text{
   height: 136rpx;

@@ -1,15 +1,15 @@
 <template>
 	<view>
-		<!-- <cu-custom bgColor="bg-f6"  backMethod="backHandle" @back-handle="backHandle">
+		<cu-custom bgColor="bg-f6"  backMethod="backHandle" @back-handle="backHandle">
 			<block slot="backText"></block>
-			<block slot="content">拍品管理</block>
-		</cu-custom> -->
-		<view style="height: 60rpx;"></view>
+			<block slot="content">我的拍品</block>
+		</cu-custom>
+		<!-- <view style="height: 60rpx;"></view>
 		<view class="cu-bar">
 			<view class="action title-style-3">
 				<text class="text-xl text-bold">我的拍品</text>
 			</view>
-		</view>
+		</view> -->
 		<view class="flex-between ac">
 			<view class="order-nav" @click="orderNavClick(0)" :class="{
 					cur:queryObj.lotType===0
@@ -117,6 +117,7 @@
 				offset:0,
 				isReachBottom:false,
 				isShowLoding:true,
+				StatusBar:this.StatusBar,
 			}
 		},
 		watch:{
@@ -127,6 +128,7 @@
 		computed: {
 			style() {
 				var CustomBar= this.CustomBar;
+				var StatusBar= this.StatusBar;
 				var style = `height:${CustomBar}px;padding-top:${StatusBar}px;`;
 				return style
 			}
